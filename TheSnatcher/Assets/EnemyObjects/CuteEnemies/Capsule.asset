@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a74ecfd59835d4ab9edbc93ad9d60a, type: 3}
+  m_Name: Capsule
+  m_EditorClassIdentifier: 
+  Name: Capsule
+  Enemy: {fileID: 1170833384841757856, guid: 79177614dfa5f4e4585d3ecea0d9d46a, type: 3}
+  speed: 30
+  jumpForce: 10
+  health: 75
+  damage: 50
