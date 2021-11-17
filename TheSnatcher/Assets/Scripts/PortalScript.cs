@@ -8,15 +8,12 @@ public class PortalScript : MonoBehaviour
 
     public static PortalScript portal;
 
-        
     // Start is called before the first frame update
     void Start()
     {
         ActivePortal = false;
         portal = this;
     }
-
-
     public void Activate(bool state)
     {
         ActivePortal = state;
@@ -31,10 +28,5 @@ public class PortalScript : MonoBehaviour
                 Debug.Log("Teleporting Player");
             }
         }
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

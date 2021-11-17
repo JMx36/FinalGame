@@ -4,16 +4,30 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    public bool IsOpened { get; set;}
+    public bool isOpened { get; set;}
+    public GameObject player;
+    float dist;
     // Start is called before the first frame update
     void Start()
     {
-        IsOpened = false;
+        isOpened = false;
+    }
+    private void Update()
+    {
+        dist = Vector3.Distance(player.transform.position, transform.position);
+        //Debug.Log(dist);
+        if (dist < 2 && Input.GetKeyDown(KeyCode.E))
+        {
+            if (isOpened == false)
+            {
+               // Debug.Log("Lever opened ");
+                isOpened = true;
+            }
+            else
+            {
+                //add sound effects
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

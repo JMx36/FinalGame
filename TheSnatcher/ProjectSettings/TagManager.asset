@@ -7,6 +7,9 @@ TagManager:
   - Ground
   - Surface
   - Lever
+  - P_Bullet
+  - A_Bullet
+  - CuteEnemy
   layers:
   - Default
   - TransparentFX
