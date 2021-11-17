@@ -15,13 +15,22 @@ public class LeverSwitch : MonoBehaviour
 
     private int OpenPortal;
 
+   /* private SpriteRenderer change;
+    private Sprite PortalOffSprite, OnPortalSprite;
+*/
+    [SerializeField] private List<Sprite> portals = new List<Sprite> { };
     // Start is called before the first frame update
     void Start()
     {   
         player = GameObject.FindWithTag("Player");
         levers = GameObject.FindObjectsOfType<Lever>();
-       /* Debug.Log(player.name);*/
-       //levers in array FindGameObjects.FindWithTag
+      /*  change = GetComponent<SpriteRenderer>();
+        PortalOffSprite = Resources.Load<Sprite>("PortalOff");
+        PortalOffSprite = Resources.Load<Sprite>("PortalOff");
+        change.sprite = PortalOffSprite;
+*/
+        /* Debug.Log(player.name);*/
+        //levers in array FindGameObjects.FindWithTag
 
     }
     //collsion on key
@@ -33,7 +42,7 @@ public class LeverSwitch : MonoBehaviour
             foreach (Lever lever in levers)
             {
                 dist = Vector3.Distance(player.transform.position, lever.transform.position);
-                Debug.Log(dist);
+               /* Debug.Log(dist);*/
                 if (dist < 2 && Input.GetKeyDown(KeyCode.E))
                 {
                     if (lever.IsOpened == false)
@@ -52,7 +61,9 @@ public class LeverSwitch : MonoBehaviour
             } 
             if (OpenPortal == levers.Length)
             {
-                portal.transform.Rotate(0f, 80f, 0f);
+                PortalScript.portal.Activate(true);
+                portal.SetActive(false);
+               // portal.transform.Rotate(0f, 80f, 0f);
                 OpenPortal = 1;
             }
         }
