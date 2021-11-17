@@ -33,8 +33,8 @@ public class LeverSwitch : MonoBehaviour
             foreach (Lever lever in levers)
             {
                 dist = Vector3.Distance(player.transform.position, lever.transform.position);
-
-                if (dist < 1 && Input.GetKey(KeyCode.E))
+                Debug.Log(dist);
+                if (dist < 2 && Input.GetKeyDown(KeyCode.E))
                 {
                     if (lever.IsOpened == false)
                     {
@@ -45,18 +45,15 @@ public class LeverSwitch : MonoBehaviour
                     }
                     else
                     {
-                       /* Debug.Log("Lever closed");
-                        portal.transform.Rotate(0f, -80f, 0f);
-                        lever.IsOpened = false;*/
-
-                        //let player know 
+                        //add sound effect
                     }                  
                 }
-                
+      
             } 
             if (OpenPortal == levers.Length)
             {
                 portal.transform.Rotate(0f, 80f, 0f);
+                OpenPortal = 1;
             }
         }
 
