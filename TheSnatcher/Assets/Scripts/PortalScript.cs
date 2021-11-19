@@ -25,7 +25,7 @@ public class PortalScript : MonoBehaviour
         {
             if (collision.tag == "Player")
             {
-                Debug.Log("Teleporting Player");
+                Debug.Log("Teleporting Player"); //change this to load the next level
             }
         }
     }

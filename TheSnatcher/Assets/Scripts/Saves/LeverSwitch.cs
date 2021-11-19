@@ -35,7 +35,7 @@ public class LeverSwitch : MonoBehaviour
                     if (lever.isOpened == false)
                     {
                         //Debug.Log("Lever opened");
-                        lever.isOpened = true;
+                       // lever.isOpened = true;
                         OpenPortal++;
                         //Debug.Log(OpenPortal);
                     }

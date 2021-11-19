@@ -9,6 +9,7 @@ public class LeverManager : MonoBehaviour
     private bool leversComplete;
 
     private Lever[] levers;
+    public List<Sprite> sprites = new List<Sprite> { };
    
     public static LeverManager leverManager;
 
