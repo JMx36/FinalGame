@@ -20,3 +20,5 @@ public class Movement : MonoBehaviour
         player.MovePosition(player.position + ShipMovement * speed * Time.deltaTime);
     }
 }
+
+

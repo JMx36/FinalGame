@@ -26,7 +26,7 @@ public class Lever : MonoBehaviour
             {
                // Debug.Log("Lever opened ");
                 isOpened = true;
-                spriteRenderer.sprite = LeverManager.leverManager.sprites[1];
+                spriteRenderer.sprite = LeverManager.leverManager.sprites[0];
             }
             else
             {
