@@ -86,5 +86,5 @@ public class EnemyDetection : MonoBehaviour
     private void MoveEnemy(int direction)
     {
         transform.position = new Vector3(transform.position.x + (direction * enemyMovement), transform.position.y, transform.position.z);
-    }   
+    }
 }
