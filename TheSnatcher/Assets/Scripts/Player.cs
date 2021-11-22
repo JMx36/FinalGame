@@ -1,17 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb2d;
+    public Animator animator;
+    private SpriteRenderer sprite; 
 
     [SerializeField] private float movingSpeed;
     [SerializeField] private float JumpForce;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float initHealth;
 
-
+    
     private bool isJumping;
 
     private float moveHorizontal;
@@ -25,22 +25,34 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
-
+        sprite = GetComponent<SpriteRenderer>();
+/*
+        int checkpointID = PlayerPrefs.GetInt("Checkpoint"); // addded player instantiated it will get checkpoint
+        Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>(); // added will get list of objects
+        foreach (Checkpoint point in checkpoints) // added 
+        {
+            if (point.ID == checkpointID)
+            {
+                transform.position = point.transform.position; // added moves to whereever the checkpoint is at
+            }
+        }*/
+       
         isJumping = false;
-
         currentHealth = initHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+       animator.SetFloat("Speed",Mathf.Abs (moveHorizontal));
         moveHorizontal = Input.GetAxisRaw("Horizontal");
-        //  Debug.Log(rb2d.velocity.sqrMagnitude);
-
-
+        if (moveHorizontal > 0)
+            sprite.flipX = false;
+        else if (moveHorizontal < 0)
+        {
+            sprite.flipX = true;
+        }
         moveVertical = Input.GetAxisRaw("Vertical");
-
     }
 
     private void FixedUpdate()
@@ -60,6 +72,8 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Surface")
         {
             isJumping = false;
+
+           animator.SetBool ("IsJumping", isJumping);
         }
     }
 
@@ -68,6 +82,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Surface")
         {
             isJumping = true;
+            animator.SetBool("IsJumping", isJumping);
         }
     }
 }
