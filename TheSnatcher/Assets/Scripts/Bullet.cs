@@ -7,18 +7,22 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D bullet;
     public Transform player;
+
     [SerializeField] private float maxDistance;
     // Start is called before the first frame update
     void Start()
     {
         bullet.velocity = transform.right * speed;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
-
+    
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
+        Debug.Log(distance);//fix this distance not updating
         if (distance > maxDistance)
         {
+            Debug.Log("Destroying");
             DestroyBullet();
         }
     }
