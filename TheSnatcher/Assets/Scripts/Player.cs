@@ -10,10 +10,10 @@ public class Player : MonoBehaviour
     [SerializeField] private float movingSpeed;
     [SerializeField] private float JumpForce;
     [SerializeField] private float maxSpeed;
-    [SerializeField] private int initHealth; 
+    [SerializeField] private float initHealth; 
     
     
-    private int currentHealth;
+    private float currentHealth;
   
    // public static Player player; 
 
@@ -82,7 +82,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(float damage)
     {
         currentHealth -= damage;
         if  (currentHealth <= 0)

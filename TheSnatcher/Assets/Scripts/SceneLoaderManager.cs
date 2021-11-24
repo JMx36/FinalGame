@@ -17,7 +17,7 @@ public class SceneLoaderManager : MonoBehaviour
         LevelTwo,
         LevelThree,
         Win_Screen,
-        GameOver,
+        GameOverScreen,
     }
     public void Awake()
     {
@@ -38,13 +38,13 @@ public class SceneLoaderManager : MonoBehaviour
 
     public void LoadGameOver()
     {
-        StartCoroutine(LoadLevel(0, Scene.GameOver.ToString()));
+        StartCoroutine(LoadLevel(0, Scene.GameOverScreen.ToString()));
     }
     public void LoadScene()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1, ""));
     }
-    IEnumerator LoadLevel(int levelIndex, string scene)
+    IEnumerator LoadLevel(int levelIndex, string scene) //animation 
     {
         transition.SetTrigger("End");
 

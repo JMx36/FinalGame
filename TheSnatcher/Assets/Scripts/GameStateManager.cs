@@ -53,7 +53,7 @@ public class GameStateManager : MonoBehaviour
     public static void NewGame()
     {
         m_GameState = GAMESTATE.Playing;
-      m_Manager.currentLives = m_Manager.startingLives; /// need to declare current lives and starting lives in a different playerhealth class? 
+      m_Manager.currentLives = m_Manager.startingLives; 
         SceneLoaderManager.m_SceneManager.LoadScene(); // to not start at anything but the starting checkpoint
         
 
@@ -131,10 +131,11 @@ public class GameStateManager : MonoBehaviour
         {
             GameStateManager.GameOver();
         }
-        else
+        /*else
         {
             GameStateManager.Resume(); 
-        } 
+        } */ // took this out bc of no changes 
+            // maybe for retry on gameover scene
     }
 }
 
