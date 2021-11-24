@@ -14,6 +14,8 @@ public class SceneLoaderManager : MonoBehaviour
     {
         MainMenu,
         LevelOne,
+        LevelTwo,
+        LevelThree,
         Win_Screen,
         GameOver,
     }

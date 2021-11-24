@@ -9,7 +9,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private string m_MainMenu;
 
-    private static GameStateManager m_Manager;
+    public static GameStateManager m_Manager;
 
     [SerializeField]
     private int startingLives;
@@ -23,6 +23,17 @@ public class GameStateManager : MonoBehaviour
         PlayerWon
     }
 
+    private static GAMESTATE m_GameState;
+
+    private void Awake()
+    {
+        if (m_Manager == null)
+        {
+            m_Manager = this;
+            DontDestroyOnLoad(m_Manager);
+        }
+        else Destroy(this);
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -37,18 +48,6 @@ public class GameStateManager : MonoBehaviour
         {
             MainMenu();
         }
-    }
-
-    private static GAMESTATE m_GameState;
-
-    private void Awake()
-    {
-        if (m_Manager == null)
-        {
-            m_Manager = this;
-            DontDestroyOnLoad(m_Manager);
-        }
-        else Destroy(this);
     }
 
     public static void NewGame()

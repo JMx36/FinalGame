@@ -24,9 +24,7 @@ public class Player : MonoBehaviour
     
     
 
-
-
-
+    public static Player player; 
 
     // Start is called before the first frame update
     void Start()
@@ -34,10 +32,9 @@ public class Player : MonoBehaviour
        // player = this;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        isJumping = false;
         currentHealth = initHealth;
-
-
-        isJumping = false; 
+        player = this;
     }
 
     // Update is called once per frame
