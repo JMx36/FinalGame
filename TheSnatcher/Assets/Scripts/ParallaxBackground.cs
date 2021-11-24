@@ -7,7 +7,8 @@ public class ParallaxBackground : MonoBehaviour
     [SerializeField]
     private Vector2 parallaxEffectMultplier;
 
-    [SerializeField] private float maximumDif;
+    [SerializeField] 
+    private float maximumDif;
     private float totalDelta;
 
     private Transform cameraTransform;
@@ -25,7 +26,7 @@ public class ParallaxBackground : MonoBehaviour
         totalDelta += deltaMovemenet.x;
         transform.position += new Vector3(deltaMovemenet.x * parallaxEffectMultplier.x, deltaMovemenet.y * parallaxEffectMultplier.y, transform.position.z);
         lastCameraPosition = cameraTransform.position;
-     //   Debug.Log(totalDelta + " " + maximumDif);
+        //Debug.Log(totalDelta + " " + maximumDif);
         if(Mathf.Abs(totalDelta) > maximumDif)
         {
             float offset = (cameraTransform.position.x - transform.position.x) % maximumDif;

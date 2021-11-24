@@ -33,10 +33,6 @@ public class EnemyDetection : MonoBehaviour
 
         maxMovementLeft = transform.position.x - enemyDistance;
         maxMovementRight = transform.position.x + enemyDistance;
-
-        // have enemy move certain distance over and over
-        //hardcode amount? like 5f to left and right?
-        /*enemy.transform.position*/
     }
 
     // Update is called once per frame

@@ -7,16 +7,17 @@ public class Player : MonoBehaviour
     public Animator animator;
     private SpriteRenderer sprite;
 
-    [SerializeField] private float movingSpeed;
-    [SerializeField] private float JumpForce;
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float initHealth; 
-    
-    
-    private float currentHealth;
-  
-   // public static Player player; 
+    [SerializeField] 
+    private float movingSpeed;
+    [SerializeField] 
+     private float JumpForce;
+    [SerializeField] 
+    private float maxSpeed;
+    [SerializeField] 
+    private int initHealth;
 
+    private int currentHealth;
+    
     private bool isJumping;
 
     private float moveHorizontal;
@@ -82,7 +83,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void ApplyDamage(float damage)
+    public void ApplyDamage(int damage)
     {
         currentHealth -= damage;
         if  (currentHealth <= 0)

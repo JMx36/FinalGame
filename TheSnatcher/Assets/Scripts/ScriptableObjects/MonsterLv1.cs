@@ -8,8 +8,8 @@ public class MonsterLv1 : ScriptableObject
     public string Name;
     public GameObject Monster;
     public float speed;
-    public float health;
-    public float damage;
+    public int health;
+    public int damage;
 }
  
 

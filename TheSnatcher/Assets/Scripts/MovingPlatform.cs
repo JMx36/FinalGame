@@ -13,7 +13,7 @@ public class MovingPlatform : MonoBehaviour
     public void Start()
     {
         if (!moveSideWays)
-        {
+        {            
             float y = transform.position.y + moveUnits;
             targetPos = new Vector3(transform.position.x, y, transform.position.z);
             startPosition = transform.position;
@@ -21,7 +21,7 @@ public class MovingPlatform : MonoBehaviour
         }
         else
         {
-            float x = transform.position.y + moveUnits;
+            float x = transform.position.x + moveUnits;
             targetPos = new Vector3(x, transform.position.y, transform.position.z);
             startPosition = transform.position;
             StartCoroutine(MovePlatform());

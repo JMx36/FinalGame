@@ -20,11 +20,6 @@ public class LeverManager : MonoBehaviour
         leversComplete = false;
         levers = FindObjectsOfType<Lever>();
     }
-    // Update is called once per frame
-    private void Update()
-    {
-          
-    }
     public void CheckLevers()
     {
         leversComplete = true;
