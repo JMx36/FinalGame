@@ -1,22 +1,29 @@
 using UnityEngine;
+using UnityEngine.SceneManagement; // added
 
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     public Animator animator;
-    private SpriteRenderer sprite; 
+    private SpriteRenderer sprite;
 
     [SerializeField] private float movingSpeed;
     [SerializeField] private float JumpForce;
     [SerializeField] private float maxSpeed;
-    [SerializeField] private float initHealth;
-
+    [SerializeField] private int initHealth; 
     
+    
+    private int currentHealth;
+  
+   // public static Player player; 
+
     private bool isJumping;
 
     private float moveHorizontal;
     private float moveVertical;
-    private float currentHealth;
+    
+    
+
 
 
 
@@ -24,21 +31,13 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+       // player = this;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-/*
-        int checkpointID = PlayerPrefs.GetInt("Checkpoint"); // addded player instantiated it will get checkpoint
-        Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>(); // added will get list of objects
-        foreach (Checkpoint point in checkpoints) // added 
-        {
-            if (point.ID == checkpointID)
-            {
-                transform.position = point.transform.position; // added moves to whereever the checkpoint is at
-            }
-        }*/
-       
-        isJumping = false;
         currentHealth = initHealth;
+
+
+        isJumping = false; 
     }
 
     // Update is called once per frame
@@ -85,4 +84,14 @@ public class Player : MonoBehaviour
             animator.SetBool("IsJumping", isJumping);
         }
     }
+
+    public void ApplyDamage(int damage)
+    {
+        currentHealth -= damage;
+        if  (currentHealth <= 0)
+        {
+          GameStateManager.LifeLost();
+        }
+    }
+
 }

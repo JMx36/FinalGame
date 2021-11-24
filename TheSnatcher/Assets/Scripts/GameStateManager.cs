@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -12,6 +11,9 @@ public class GameStateManager : MonoBehaviour
 
     private static GameStateManager m_Manager;
 
+    [SerializeField]
+    private int startingLives;
+    private int currentLives; // added current lives for NewGame and Pause methods below
     enum GAMESTATE
     {
         Menu,
@@ -52,8 +54,11 @@ public class GameStateManager : MonoBehaviour
     public static void NewGame()
     {
         m_GameState = GAMESTATE.Playing;
-        SceneLoaderManager.m_SceneManager.LoadScene();
-    }
+      m_Manager.currentLives = m_Manager.startingLives; /// need to declare current lives and starting lives in a different playerhealth class? 
+        SceneLoaderManager.m_SceneManager.LoadScene(); // to not start at anything but the starting checkpoint
+        
+
+    }     
 
     public static void MainMenu()
     {
@@ -71,13 +76,40 @@ public class GameStateManager : MonoBehaviour
         else
         {
             m_GameState = GAMESTATE.Playing;
-            Time.timeScale = 1;
+            Time.timeScale = 1;  
         }
     }
     public static void Restart()
     {
+        m_GameState = GAMESTATE.Playing;
         SceneLoaderManager.m_SceneManager.Restart();
     }
+    public static void Resume()
+    { 
+        m_GameState = GAMESTATE.Playing;
+        SceneLoaderManager.m_SceneManager.LoadScene();
+    }
+
+        public static void SaveGame() // Emily added body for PlayerPrefs save method
+        {
+        //add other items here
+
+        Lever[] levers = FindObjectsOfType<Lever>();
+            foreach (Lever lever in levers)
+            {
+                if (lever.isOpened)
+                {
+                    PlayerPrefs.SetInt(lever.name, 1);
+                }
+                else
+                {
+                    PlayerPrefs.SetInt(lever.name, 0);
+                }
+            }
+   
+
+        }
+    
     public static void PlayerWins()
     {
         m_GameState = GAMESTATE.PlayerWon;
@@ -88,9 +120,23 @@ public class GameStateManager : MonoBehaviour
         m_GameState = GAMESTATE.GameOver;
         SceneLoaderManager.m_SceneManager.LoadGameOver();
     }
+
     public static void QuitGame()
     {
         Application.Quit();
     }
+    public static void LifeLost()
+    {
+        m_Manager.currentLives -= 1;
+        if (m_Manager.currentLives <= 0)
+        {
+            GameStateManager.GameOver();
+        }
+        else
+        {
+            GameStateManager.Resume(); 
+        } 
+    }
 }
+
 

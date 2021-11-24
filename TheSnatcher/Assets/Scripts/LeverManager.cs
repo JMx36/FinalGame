@@ -23,17 +23,21 @@ public class LeverManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+          
+    }
+    public void CheckLevers()
+    {
         leversComplete = true;
-        foreach(Lever lever in levers)
+        foreach (Lever lever in levers)
         {
-          //  Debug.Log("Before !  " + lever.isOpened + " and After !" + !lever.isOpened);
-            if (!lever.isOpened) leversComplete = false; 
+            //  Debug.Log("Before !  " + lever.isOpened + " and After !" + !lever.isOpened);
+            if (!lever.isOpened) leversComplete = false;
         }
         if (leversComplete)
         {
             TurnPortalOn();
             PortalScript.portal.Activate(true);
-        }       
+        }
     }
     public void TurnPortalOn()
     {
