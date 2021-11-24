@@ -19,10 +19,8 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         float distance = Vector2.Distance(transform.position, player.position);
-        Debug.Log(distance);//fix this distance not updating
         if (distance > maxDistance)
         {
-            Debug.Log("Destroying");
             DestroyBullet();
         }
     }
