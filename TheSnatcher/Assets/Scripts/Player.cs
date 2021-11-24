@@ -18,27 +18,18 @@ public class Player : MonoBehaviour
     private float moveVertical;
     private float currentHealth;
 
-
-
+    public static Player player; 
 
     // Start is called before the first frame update
     void Start()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-/*
-        int checkpointID = PlayerPrefs.GetInt("Checkpoint"); // addded player instantiated it will get checkpoint
-        Checkpoint[] checkpoints = FindObjectsOfType<Checkpoint>(); // added will get list of objects
-        foreach (Checkpoint point in checkpoints) // added 
-        {
-            if (point.ID == checkpointID)
-            {
-                transform.position = point.transform.position; // added moves to whereever the checkpoint is at
-            }
-        }*/
        
         isJumping = false;
         currentHealth = initHealth;
+
+        player = this;
     }
 
     // Update is called once per frame

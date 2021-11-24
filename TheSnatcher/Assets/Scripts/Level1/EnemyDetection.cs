@@ -17,7 +17,7 @@ public class EnemyDetection : MonoBehaviour
     private float enemyMovement = 0.01f;
 
     [SerializeField]
-    private float enemyAttackRange = 7f;
+    private float enemyAttackRange;
 
     private float maxMovementLeft;
 
@@ -54,7 +54,6 @@ public class EnemyDetection : MonoBehaviour
             {
                 MoveEnemy(1);
             }
-            //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, enemyMovement);
         }
         else
         {

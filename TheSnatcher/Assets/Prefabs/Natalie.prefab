@@ -173,8 +173,8 @@ GameObject:
   - component: {fileID: 5391483536058317813}
   - component: {fileID: 5391483536058317812}
   - component: {fileID: 724072590}
-  - component: {fileID: 724072584}
   - component: {fileID: 4132107090404402220}
+  - component: {fileID: 1809012249790871809}
   m_Layer: 0
   m_Name: Natalie
   m_TagString: Surface
@@ -321,20 +321,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17044637, y: 0.017372847}
   m_EdgeRadius: 0
---- !u!114 &724072584
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5391483536058317810}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e7a330f53ba5c441bab7655497525c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingSpeed: 5
-  JumpForce: 25
 --- !u!114 &4132107090404402220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +333,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964192951902e464885af9ed0499a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1809012249790871809}
   movingSpeed: 20
-  JumpForce: 180
+  JumpForce: 200
   maxSpeed: 100
   initHealth: 100
+--- !u!95 &1809012249790871809
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5391483536058317810}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 01e6df127d42dd74594dd49726117195, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
