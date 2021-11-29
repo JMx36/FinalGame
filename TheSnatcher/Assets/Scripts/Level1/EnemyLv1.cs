@@ -8,12 +8,12 @@ public class EnemyLv1 : MonoBehaviour
     private MonsterLv1 monsterLv1;
 
     [SerializeField]
-    private float damageTaken;
+    private int damageTaken;
 
-    private float damage;
+    private int damage;
     private string enemyName;
-    private float health;
-    private float currentHealth; 
+    private int health;
+    private int currentHealth; 
     private void Awake()
     {
         damage = monsterLv1.damage;
