@@ -7,6 +7,8 @@ public class LeverManager : MonoBehaviour
     public GameObject portalOn;
     public GameObject portalOff;
     private bool leversComplete;
+   /* private List<int> leverNums;*/
+
 
     private Lever[] levers;
     public List<Sprite> sprites = new List<Sprite> { };
@@ -27,6 +29,8 @@ public class LeverManager : MonoBehaviour
         {
             //  Debug.Log("Before !  " + lever.isOpened + " and After !" + !lever.isOpened);
             if (!lever.isOpened) leversComplete = false;
+            /*int num = PlayerPrefs.GetInt(lever.name);
+            leverNums.Add(num);*/
         }
         if (leversComplete)
         {

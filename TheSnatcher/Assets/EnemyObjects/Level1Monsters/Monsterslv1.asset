@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Monsterslv1
   m_EditorClassIdentifier: 
   Name: VineMonsters
-  Monster: {fileID: 0}
+  Monster: {fileID: 2854318425756081464, guid: 6a0ee5f357c31fc4eaa22e585d2a7e24, type: 3}
   speed: 1000
   health: 100
   damage: 30
