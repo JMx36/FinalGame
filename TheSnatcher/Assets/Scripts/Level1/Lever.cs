@@ -9,6 +9,10 @@ public class Lever : MonoBehaviour
 
     [SerializeField]
     private GameObject player;
+
+   /* [SerializeField]
+    private int leverNum; //must be greater than 0 */
+
     private  float dist;
     private LeverManager manager;
 
@@ -16,17 +20,18 @@ public class Lever : MonoBehaviour
     void Start()
     {
         manager = GetComponentInParent<LeverManager>();
-        int levervalue = PlayerPrefs.GetInt(this.name);
-        if (levervalue == 1)
+       int levervalue = PlayerPrefs.GetInt(this.name);
+        if (levervalue == 0)
         {
-            isOpened = true;
+            isOpened = false;
+            
         }
         else
         {
-            isOpened = false;
+            isOpened = true;
         }
+        
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-
     }
     private void Update()
     {
@@ -36,11 +41,12 @@ public class Lever : MonoBehaviour
         {
             if (isOpened == false)
             {
-               // Debug.Log("Lever opened ");
                 isOpened = true;
                 spriteRenderer.sprite = LeverManager.leverManager.sprites[0];
+                /*PlayerPrefs.SetInt(name, leverNum);*/
                 manager.CheckLevers();
             }
+            
             else
             {
                 //add sound effects
