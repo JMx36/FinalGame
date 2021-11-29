@@ -10,6 +10,7 @@ TagManager:
   - P_Bullet
   - A_Bullet
   - CuteEnemy
+  - Edge
   layers:
   - Default
   - TransparentFX

@@ -124,7 +124,7 @@ public class GameStateManager : MonoBehaviour
     {
         Application.Quit();
     }
-    public static void LifeLost()
+    public void LifeLost()
     {
         m_Manager.currentLives -= 1;
         if (m_Manager.currentLives <= 0)

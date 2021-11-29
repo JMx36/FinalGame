@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Square
   Enemy: {fileID: 7732719575976178684, guid: 94d062244dd36d34b91326fc52421d50, type: 3}
-  speed: 10
+  speed: 25
   jumpForce: 10
-  health: 50
-  damage: 30
+  health: 30
+  damage: 10

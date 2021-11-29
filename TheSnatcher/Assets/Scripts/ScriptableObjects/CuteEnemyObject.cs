@@ -6,9 +6,9 @@ using UnityEngine;
 public class CuteEnemyObject : ScriptableObject
 {
     public string Name;
-    public GameObject Enemy;
+    public GameObject Enemy; //ToDo: change this to sprite once the spirtes are added to the folder
     public float speed;
     public float jumpForce;
-    public float health;
-    public float damage;
+    public int health;
+    public int damage;
 }

@@ -23,8 +23,6 @@ public class Player : MonoBehaviour
     private float moveHorizontal;
     private float moveVertical;
     
-    
-
     public static Player player; 
 
     // Start is called before the first frame update
@@ -41,6 +39,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      // Debug.Log(currentHealth);
        animator.SetFloat("Speed",Mathf.Abs (moveHorizontal));
         moveHorizontal = Input.GetAxisRaw("Horizontal");
         if (moveHorizontal > 0)
@@ -88,7 +87,7 @@ public class Player : MonoBehaviour
         currentHealth -= damage;
         if  (currentHealth <= 0)
         {
-          GameStateManager.LifeLost();
+          GameStateManager.m_Manager.LifeLost();
         }
     }
 
