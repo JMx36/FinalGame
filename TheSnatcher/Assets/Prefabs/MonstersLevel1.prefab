@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00693468bdf18fc489bf2a250d4f4423, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterLv1: {fileID: 0}
-  damageTaken: 0
+  monster: {fileID: 11400000, guid: 76380805c5ec5584c893e9e4108324d5, type: 2}
+  damageTaken: 30
 --- !u!61 &6569025359682367354
 BoxCollider2D:
   m_ObjectHideFlags: 0

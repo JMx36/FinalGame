@@ -64,7 +64,9 @@ public class CuteEnemies : MonoBehaviour
         if (jump)
         {
             Debug.Log("Jumping");
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.velocity = Vector2.up * jumpForce;
+            jump = false;
+            // rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
         rb.AddForce(Vector2.right * direction * speed);

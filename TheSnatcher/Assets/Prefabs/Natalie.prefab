@@ -333,9 +333,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 964192951902e464885af9ed0499a4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 1809012249790871809}
+  animator: {fileID: 0}
   movingSpeed: 20
-  JumpForce: 200
+  jumpForce: 10
   maxSpeed: 100
   initHealth: 100
 --- !u!95 &1809012249790871809

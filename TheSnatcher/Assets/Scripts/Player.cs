@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] 
     private float movingSpeed;
     [SerializeField] 
-     private float JumpForce;
+     private float jumpForce;
     [SerializeField] 
     private float maxSpeed;
     [SerializeField] 
@@ -28,7 +28,6 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // player = this;
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         isJumping = false;
@@ -40,15 +39,21 @@ public class Player : MonoBehaviour
     void Update()
     {
       // Debug.Log(currentHealth);
-       animator.SetFloat("Speed",Mathf.Abs (moveHorizontal));
+        animator.SetFloat("Speed", Mathf.Abs (moveHorizontal));
         moveHorizontal = Input.GetAxisRaw("Horizontal");
+
         if (moveHorizontal > 0)
             sprite.flipX = false;
+
         else if (moveHorizontal < 0)
         {
             sprite.flipX = true;
         }
-        moveVertical = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+        {
+            Debug.Log("Jumping");
+            rb2d.velocity = Vector2.up * jumpForce;
+        }
     }
 
     private void FixedUpdate()
@@ -56,10 +61,6 @@ public class Player : MonoBehaviour
         if (rb2d.velocity.sqrMagnitude <= maxSpeed)
         {
             rb2d.AddForce(new Vector2(moveHorizontal, 0f) * movingSpeed);
-        }
-        if (!isJumping)
-        {
-            rb2d.AddForce(new Vector2(0f, moveVertical) * JumpForce);
         }
     }
 
