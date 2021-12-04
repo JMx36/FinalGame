@@ -776,6 +776,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxEffectMultplier: {x: 1, y: 0}
   maximumDif: 80
+--- !u!95 &658165101 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1809012249790871809, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+  m_PrefabInstance: {fileID: 939421196}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &711534852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1102,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4132107090404402220, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 658165101}
     - target: {fileID: 5391483536058317810, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_Name
       value: Natalie
