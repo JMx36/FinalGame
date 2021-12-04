@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "CrabEnemyLv3", menuName = "Crabs")]
-public class CrabEnemyLv3 : ScriptableObject
+[CreateAssetMenu (fileName = "Monsterslv1", menuName ="GreenMonsters" )]
+public class Monsters : ScriptableObject 
 {
     public string Name;
     public GameObject Monster;
@@ -11,3 +11,5 @@ public class CrabEnemyLv3 : ScriptableObject
     public int health;
     public int damage;
 }
+ 
+

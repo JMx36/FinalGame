@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 391b0b3eed5ace144bed0852e48a797d, type: 3}
-  m_Name: CrabEnemyLv3
+  m_Script: {fileID: 11500000, guid: 8cacd0ba7cb08af4ca35d33cc3735701, type: 3}
+  m_Name: Monsterslv3
   m_EditorClassIdentifier: 
   Name: 
-  Monster: {fileID: 2854318425756081464, guid: 6a0ee5f357c31fc4eaa22e585d2a7e24, type: 3}
-  speed: 1000
-  health: 100
-  damage: 20
+  Monster: {fileID: 0}
+  speed: 0
+  health: 0
+  damage: 0

@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLv1 : MonoBehaviour
+public class Octopus : MonoBehaviour
 {
     [SerializeField]
-    private MonsterLv1 monsterLv1;
+    private Monsters monster;
 
     [SerializeField]
     private int damageTaken;
@@ -16,11 +16,10 @@ public class EnemyLv1 : MonoBehaviour
     private int currentHealth; 
     private void Awake()
     {
-        damage = monsterLv1.damage;
-        health = monsterLv1.health;
-        enemyName = monsterLv1.Name;
+        damage = monster.damage;
+        health = monster.health;
+        enemyName = monster.Name;
         currentHealth = health;
-
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
