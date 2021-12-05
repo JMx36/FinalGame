@@ -2331,6 +2331,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &557781080 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 658165107, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+  m_PrefabInstance: {fileID: 1565224113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557781078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40353bdd07de03545b7ad06af87fd741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &557781085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5391483536058317815, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
@@ -6057,6 +6068,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 658165107, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 1733482496}
     - target: {fileID: 724072590, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_Size.x
       value: 0.10988427
@@ -8781,6 +8796,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2044298223865315333, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 557781080}
+    - target: {fileID: 2044298223865315333, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Save
+      objectReference: {fileID: 0}
     - target: {fileID: 3328940246464969440, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: settings
       value: 
@@ -8877,9 +8900,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4611710915101226671, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 557781080}
+    - target: {fileID: 4611710915101226671, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdjVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 4611710915346817517, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7048094999119050786, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 557781080}
+    - target: {fileID: 7048094999119050786, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 7897386255780383415, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_Name
