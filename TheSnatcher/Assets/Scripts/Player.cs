@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
         currentHealth = initHealth;
         player = this;
         alreadyOpened = false;
+        allowMovement = true;
     }
 
     // Update is called once per frame
