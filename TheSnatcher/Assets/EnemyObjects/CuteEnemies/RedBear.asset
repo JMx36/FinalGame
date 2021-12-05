@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2a74ecfd59835d4ab9edbc93ad9d60a, type: 3}
-  m_Name: Capsule
+  m_Name: RedBear
   m_EditorClassIdentifier: 
-  Name: Capsule
-  Enemy: {fileID: 1170833384841757856, guid: 79177614dfa5f4e4585d3ecea0d9d46a, type: 3}
-  speed: 30
-  jumpForce: 10
-  health: 75
-  damage: 20
+  Name: RedBear
+  Enemy: {fileID: 7732719575976178684, guid: 94d062244dd36d34b91326fc52421d50, type: 3}
+  speed: 35
+  jumpForce: 30
+  health: 100
+  damage: 40
+  maxSpeed: 30

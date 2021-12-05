@@ -21,7 +21,10 @@ public class Player : MonoBehaviour
     private bool isJumping;
 
     private float moveHorizontal;
-    private float moveVertical;
+
+    private float currentXvelocity;
+
+    private bool alreadyOpened;
     
     public static Player player; 
 
@@ -33,12 +36,13 @@ public class Player : MonoBehaviour
         isJumping = false;
         currentHealth = initHealth;
         player = this;
+        alreadyOpened = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-      // Debug.Log(currentHealth);
+       // Debug.Log(currentHealth);
         animator.SetFloat("Speed", Mathf.Abs (moveHorizontal));
         moveHorizontal = Input.GetAxisRaw("Horizontal");
 
@@ -49,31 +53,50 @@ public class Player : MonoBehaviour
         {
             sprite.flipX = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+
+        if (Input.GetAxisRaw("Jump") > 0 && !isJumping)
         {
-            Debug.Log("Jumping");
-            rb2d.velocity = Vector2.up * jumpForce;
+          //  Debug.Log("Jumping");                    
+            rb2d.velocity = new Vector2(currentXvelocity, jumpForce);
+        }
+
+        //If statements to open and close options
+        if (Input.GetKeyDown(KeyCode.Escape) && !alreadyOpened)
+        {
+            MenuSettings.menuSettings.Open();
+            alreadyOpened = true;
+        }
+        else if(Input.GetKeyDown(KeyCode.Escape) && alreadyOpened)
+        {
+            MenuSettings.menuSettings.Close();
+            alreadyOpened = false;
         }
     }
 
     private void FixedUpdate()
     {
+        //Debug.Log(rb2d.velocity.x);
+
         if (rb2d.velocity.sqrMagnitude <= maxSpeed)
         {
             rb2d.AddForce(new Vector2(moveHorizontal, 0f) * movingSpeed);
+            
         }
+        currentXvelocity = rb2d.velocity.x;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Surface")
         {
+          //  Debug.Log("Landing");
             isJumping = false;
+          //this is to keep the velocity of the character constant after landing
+            rb2d.velocity = new Vector2(currentXvelocity, 0);
 
-           animator.SetBool ("IsJumping", isJumping);
+            animator.SetBool ("IsJumping", isJumping);
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Surface")
@@ -82,7 +105,6 @@ public class Player : MonoBehaviour
             animator.SetBool("IsJumping", isJumping);
         }
     }
-
     public void ApplyDamage(int damage)
     {
         currentHealth -= damage;

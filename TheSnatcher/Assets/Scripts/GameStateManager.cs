@@ -55,10 +55,7 @@ public class GameStateManager : MonoBehaviour
         m_GameState = GAMESTATE.Playing;
       m_Manager.currentLives = m_Manager.startingLives; 
         SceneLoaderManager.m_SceneManager.LoadScene(); // to not start at anything but the starting checkpoint
-        
-
     }     
-
     public static void MainMenu()
     {
         m_GameState = GAMESTATE.Menu;
@@ -105,8 +102,6 @@ public class GameStateManager : MonoBehaviour
                     PlayerPrefs.SetInt(lever.name, 0);
                 }
             }
-   
-
         }
     
     public static void PlayerWins()

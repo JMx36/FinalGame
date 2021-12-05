@@ -13,25 +13,24 @@ public class CuteEnemies : MonoBehaviour
     private int health;
     private int currentHealth;
     private int damage;
+    private float maxSpeed;
 
     private Transform player; 
 
     private bool jump;
     private float direction;
-
-    
-    
    
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         speed = enemy.speed;
+        maxSpeed = enemy.maxSpeed;
         jumpForce = enemy.jumpForce;
         health = enemy.health;
         damage = enemy.damage;
         //assigns health to currenthealth 
         currentHealth = health;
-
+        
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -59,18 +58,18 @@ public class CuteEnemies : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
-        //Debug.Log(rb.velocity);
+    {       
         if (jump)
         {
-            Debug.Log("Jumping");
+           // Debug.Log(rb.velocity.x);
             rb.velocity = Vector2.up * jumpForce;
+           // Debug.Log("Jumping");
+            //Debug.Log(rb.velocity.y);
             jump = false;
-            // rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
 
-        rb.AddForce(Vector2.right * direction * speed);
-        jump = false;
+        if(rb.velocity.x <= maxSpeed)
+            rb.AddForce(Vector2.right * direction * speed);
     }
 
     public void ReduceHealth()
@@ -84,7 +83,7 @@ public class CuteEnemies : MonoBehaviour
         {
             ReduceHealth();
         }
-        if(collision.gameObject.tag == "P_Bullet")
+        if(collision.gameObject.tag == "Player")
         {
             Player.player.ApplyDamage(damage);
         }

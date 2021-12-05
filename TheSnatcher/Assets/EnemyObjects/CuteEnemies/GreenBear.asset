@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2a74ecfd59835d4ab9edbc93ad9d60a, type: 3}
-  m_Name: Square
+  m_Name: GreenBear
   m_EditorClassIdentifier: 
-  Name: Square
-  Enemy: {fileID: 7732719575976178684, guid: 94d062244dd36d34b91326fc52421d50, type: 3}
-  speed: 25
-  jumpForce: 10
-  health: 30
-  damage: 10
+  Name: GreenBear
+  Enemy: {fileID: 3223798633717605899, guid: cc0f0843ca52f8b4da5a4791fa3a7d3c, type: 3}
+  speed: 30
+  jumpForce: 25
+  health: 70
+  damage: 30
+  maxSpeed: 30

@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2a74ecfd59835d4ab9edbc93ad9d60a, type: 3}
-  m_Name: Circle
+  m_Name: BrownBear
   m_EditorClassIdentifier: 
-  Name: Circle
-  Enemy: {fileID: 3223798633717605899, guid: cc0f0843ca52f8b4da5a4791fa3a7d3c, type: 3}
-  speed: 35
+  Name: BrownBear
+  Enemy: {fileID: 1170833384841757856, guid: 79177614dfa5f4e4585d3ecea0d9d46a, type: 3}
+  speed: 25
   jumpForce: 20
-  health: 100
-  damage: 30
+  health: 50
+  damage: 20
+  maxSpeed: 30
