@@ -399,7 +399,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Save
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3328940246464969440, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
 --- !u!1 &376537190
 GameObject:
@@ -1534,6 +1535,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 658165107, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: settings
+      value: 
+      objectReference: {fileID: 1893551082}
     - target: {fileID: 5391483534211179019, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -1709,6 +1714,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxEffectMultplier: {x: 0.8, y: 0}
   maximumDif: 80
+--- !u!1 &1893551082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7897386255780383415, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+  m_PrefabInstance: {fileID: 266319541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1970869027 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9137052543568440536, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
