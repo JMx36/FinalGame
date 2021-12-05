@@ -16,10 +16,12 @@ public class MenuSettings : MonoBehaviour
     }
     public void Open()
     {
+        Player.player.AllowMovement(false);
         settings.SetActive(true);
     }
     public void Close()
     {
+        Player.player.AllowMovement(true);
         settings.SetActive(false);
     }
     public void AdjVolume(float volLevel)

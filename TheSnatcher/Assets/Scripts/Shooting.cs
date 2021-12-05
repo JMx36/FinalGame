@@ -14,7 +14,7 @@ public class Shooting : MonoBehaviour
     {
         getMousePosition();
         
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && Player.player.GetMovement())
         {
             Shoot();
         }

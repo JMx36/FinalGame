@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 658165107}
+    - target: {fileID: 2044298223865315333, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Save
+      objectReference: {fileID: 0}
     - target: {fileID: 4611710914758387217, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -912,10 +916,18 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 658165107}
+    - target: {fileID: 4611710915101226671, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AdjVolume
+      objectReference: {fileID: 0}
     - target: {fileID: 7048094999119050786, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 658165107}
+    - target: {fileID: 7048094999119050786, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     - target: {fileID: 7897386255780383415, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_Name
       value: OptionsMenu

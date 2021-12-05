@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     private float currentXvelocity;
 
     private bool alreadyOpened;
+
+    private bool allowMovement;
     
     public static Player player; 
 
@@ -119,5 +121,12 @@ public class Player : MonoBehaviour
           GameStateManager.m_Manager.LifeLost();
         }
     }
-
+    public void AllowMovement(bool allow)
+    {
+        allowMovement = allow;
+    }
+    public bool GetMovement()
+    {
+        return allowMovement;
+    }
 }
