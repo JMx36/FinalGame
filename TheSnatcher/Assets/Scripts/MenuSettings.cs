@@ -27,13 +27,18 @@ public class MenuSettings : MonoBehaviour
     public void AdjVolume(float volLevel)
     {
         Debug.Log(volLevel);
-        //audioMixer.SetFloat("MasterVolume", volLevel);
+        audioMixer.SetFloat("MasterVolume", volLevel);
     }
 
     public void Save()
     {
         Debug.Log("Saving");
         GameStateManager.SaveGame();
+    }
+
+    public void Retry()
+    {
+        GameStateManager.Restart();
     }
 
     public void Quit()

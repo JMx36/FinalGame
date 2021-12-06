@@ -49,14 +49,24 @@ public class AudioManager : MonoBehaviour
             if (!assigned)
             {
                 s.source.outputAudioMixerGroup = groups[0];
-                //Debug.Log("Assigned to Master");
+                Debug.Log("Assigned to Master");
             }
         }
     }
-    private void Start()
+    private void Start() //might have problems loading in from scene to scene if we keep a singleton
     {
-        PlayAudio("Background Music");
-        PlayAudio("Walking Sounds");
+        if ((int)GameStateManager.m_GameState == 1)
+        {
+            PlayAudio("First Level");
+        }
+        if ((int)GameStateManager.m_GameState == 2)
+        {
+            PlayAudio("Second Level");
+        }
+        if ((int)GameStateManager.m_GameState == 3)
+        {
+            PlayAudio("Third Level");
+        }
     }
 
     public void PlayAudio(string musName)
@@ -64,10 +74,10 @@ public class AudioManager : MonoBehaviour
         Sounds s = Array.Find(sounds, sounds => sounds.name == musName);
         if (s == null)
         {
-            //Debug.Log("Sound : " + musName + " was not found.");
+            Debug.Log("Sound : " + musName + " was not found.");
             return;
         }
-        //Debug.Log("Playing " + musName);
+        Debug.Log("Playing " + musName);
         s.source.Play();
     }
 

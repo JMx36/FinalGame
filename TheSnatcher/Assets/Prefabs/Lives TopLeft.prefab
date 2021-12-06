@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 6999760639927025175}
   - component: {fileID: 6999760639927025174}
   m_Layer: 5
-  m_Name: Life 2
+  m_Name: Life 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -265,9 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f3c9a5dc35cba44e8f88fba9de51da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life_1: {fileID: 6999760639748894703}
-  life_2: {fileID: 0}
-  life_3: {fileID: 0}
+  lives: []
 --- !u!1 &6999760640772178589
 GameObject:
   m_ObjectHideFlags: 0

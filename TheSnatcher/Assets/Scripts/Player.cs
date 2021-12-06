@@ -77,13 +77,17 @@ public class Player : MonoBehaviour
 
         if (Mathf.Abs(rb2d.velocity.y) > 0)
         {
-            Debug.Log(rb2d.velocity.y);
+            //Debug.Log(rb2d.velocity.y);
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            ApplyDamage(100);
         }
     }
 
     private void FixedUpdate()
     {
-        //Debug.Log(rb2d.velocity.x);
+      //  Debug.Log(rb2d.velocity.x);
 
         if (rb2d.velocity.sqrMagnitude <= maxSpeed)
         {
@@ -97,7 +101,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.tag == "Surface")
         {
-           Debug.Log("Landing");
+          // Debug.Log("Landing");
             isJumping = false;
           //this is to keep the velocity of the character constant after landing
             rb2d.velocity = new Vector2(currentXvelocity, 0);
@@ -117,7 +121,7 @@ public class Player : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         currentHealth -= damage;
-        if  (currentHealth <= 0)
+        if (currentHealth <= 0)
         {
           GameStateManager.m_Manager.LifeLost();
         }

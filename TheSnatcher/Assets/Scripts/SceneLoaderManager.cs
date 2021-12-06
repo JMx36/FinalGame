@@ -33,7 +33,7 @@ public class SceneLoaderManager : MonoBehaviour
     }
     public void Restart()
     {
-        StartCoroutine(LoadLevel(0, Scene.LevelOne.ToString()));
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex, ""));
     }
 
     public void LoadGameOver()
@@ -44,6 +44,20 @@ public class SceneLoaderManager : MonoBehaviour
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1, ""));
     }
+    public void FirstLevel()
+    {
+        StartCoroutine(LoadLevel(0, Scene.LevelOne.ToString()));
+    }
+    public void SecondLevel()
+    {
+        StartCoroutine(LoadLevel(0, Scene.LevelTwo.ToString()));
+    }
+    public void ThirdLevel()
+    {
+        StartCoroutine(LoadLevel(0, Scene.LevelThree.ToString()));
+    }
+
+
     IEnumerator LoadLevel(int levelIndex, string scene) //animation 
     {
         transition.SetTrigger("End");

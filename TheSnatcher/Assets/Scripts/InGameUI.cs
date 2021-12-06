@@ -5,33 +5,45 @@ using UnityEngine;
 public class InGameUI : MonoBehaviour
 {
     [SerializeField]
-    GameObject life_1;
+    private GameObject[] lives;
 
-    [SerializeField]
-    GameObject life_2;
+    public static InGameUI inGameUI;
 
-    [SerializeField]
-    GameObject life_3;
-
-    // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
-       /* GameStateManager.OnLoseLife += OnLoseLife;
-        GameStateManager.OnGameOver += OnGameOver;*/
+        inGameUI = this;
+       // Debug.Log("InGameUI starting");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void OnLoseLife()
     {
-        
+        int lose = 1;
+        for(int i = lives.Length - 1; i >= 0; i--)
+        {
+            if (lives[i].activeInHierarchy && lose > 0)
+            {
+                //Debug.Log("Taking away a life");
+                lives[i].SetActive(false);
+                lose--;
+            }             
+        }
     }
-    private void OnLoseLife()
+    public void Resume(int numberOfLives) //I have to test this
     {
-        Debug.Log("Lost a life");
+        numberOfLives--; //substracting by 1 to fit with the array index
+        for(int i = lives.Length - 1; i > numberOfLives; i--)
+        {
+            lives[i].SetActive(false);
+        }
     }
-
-    private void OnGameOver()
+    //resets the amount of lives to show in the screen
+    public void NewGame()
     {
-        Debug.Log("Game over");
+        foreach(GameObject g in lives)
+        {
+            if (!g.activeInHierarchy)
+            {
+                g.SetActive(true);
+            }
+        }
     }
 }
