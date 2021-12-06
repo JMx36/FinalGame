@@ -35,7 +35,6 @@ public class SceneLoaderManager : MonoBehaviour
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex, ""));
     }
-
     public void LoadGameOver()
     {
         StartCoroutine(LoadLevel(0, Scene.GameOverScreen.ToString()));

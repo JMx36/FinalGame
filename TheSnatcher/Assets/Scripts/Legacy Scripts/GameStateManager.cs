@@ -14,7 +14,7 @@ public class GameStateManager : MonoBehaviour
 
     private bool resume;
 
-
+    private bool newGame;
     public enum GAMESTATE
     {
         Menu,
@@ -59,16 +59,23 @@ public class GameStateManager : MonoBehaviour
         //overrides the "else" above
         if (TestingLevel != 0 && TestingLevel <= 3 && !m_Manager.resume)
         {
-            m_GameState = (GAMESTATE)TestingLevel;
-            Debug.Log("Initial state: " + m_GameState.ToString());
+            m_GameState = (GAMESTATE)TestingLevel;           
             m_Manager.currentLives = m_Manager.startingLives;
+
+            Debug.Log("Initial state: " + m_GameState.ToString());
             Debug.Log(m_Manager.currentLives);
         }
-
-        else if (m_Manager.resume)
+        else if (m_Manager.resume && InGameUI.inGameUI != null)
         {
             InGameUI.inGameUI.Resume(m_Manager.currentLives);
+            m_Manager.resume = false;
         }
+        else if (m_Manager.newGame)
+        {
+            InGameUI.inGameUI.NewGame();
+            m_Manager.newGame = false;
+        }
+
     }
 
     private void Update()
@@ -114,12 +121,14 @@ public class GameStateManager : MonoBehaviour
         m_GameState = GAMESTATE.SecondLevel;
         SceneLoaderManager.m_SceneManager.ThirdLevel();
     }
+
     public static void PlayerWins() //Call this when the player wins to unlock ability to choose levels. Still have to test this
     {
         m_GameState = GAMESTATE.PlayerWon;
         SceneLoaderManager.m_SceneManager.LoadWin();
         PlayerPrefs.SetInt("Won", (int)m_GameState);
     }
+
     public static void GameOver()
     {
         m_GameState = GAMESTATE.PlayerLost;
@@ -169,10 +178,11 @@ public class GameStateManager : MonoBehaviour
     //Resest Playerfebs and starts a new game
     public static void NewGame()
     {
+        m_Manager.newGame = true;
         FirstLevel();
         m_Manager.currentLives = m_Manager.startingLives;
-        InGameUI.inGameUI.NewGame();
-        PlayerPrefs.SetInt("State", (int)m_GameState);
+   //     InGameUI.inGameUI.NewGame();
+        PlayerPrefs.SetInt("State", (int)m_GameState); //test whether this works
         PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
         Debug.Log("Lives " + m_Manager.currentLives + ". Player state is " + m_GameState.ToString());
     }

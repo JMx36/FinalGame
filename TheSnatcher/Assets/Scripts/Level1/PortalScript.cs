@@ -36,8 +36,7 @@ public class PortalScript : MonoBehaviour
                     GameStateManager.ThirdLevel();
                 }
                 else
-                    Debug.Log("Level non existent. Current GameState level is " + GameStateManager.m_GameState.ToString());
-                    
+                    Debug.Log("Level non existent. Current GameState level is " + GameStateManager.m_GameState.ToString());                    
             }
         }
     }

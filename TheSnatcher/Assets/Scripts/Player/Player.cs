@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // Debug.Log(currentHealth);
+       
         animator.SetFloat("Speed", Mathf.Abs (moveHorizontal));
         moveHorizontal = Input.GetAxisRaw("Horizontal");
 
@@ -121,9 +121,12 @@ public class Player : MonoBehaviour
     public void ApplyDamage(int damage)
     {
         currentHealth -= damage;
+        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
           GameStateManager.m_Manager.LifeLost();
+          currentHealth = initHealth;
+          Debug.Log(currentHealth);
         }
     }
     public void AllowMovement(bool allow)
