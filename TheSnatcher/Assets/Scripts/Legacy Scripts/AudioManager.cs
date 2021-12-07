@@ -15,18 +15,6 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         AudioMixerGroup[] groups = audioMixer.FindMatchingGroups("Master");
-
-        if (audioManager == null)
-        {
-            audioManager = this;
-            DontDestroyOnLoad(audioManager);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         foreach (Sounds s in sounds)
         {
             bool assigned = false;
@@ -55,15 +43,19 @@ public class AudioManager : MonoBehaviour
     }
     private void Start() //might have problems loading in from scene to scene if we keep a singleton
     {
-        if ((int)GameStateManager.m_GameState == 1)
+        if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.Menu)
+        {
+
+        }
+        if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel)
         {
             PlayAudio("First Level");
         }
-        if ((int)GameStateManager.m_GameState == 2)
+        if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.SecondLevel)
         {
             PlayAudio("Second Level");
         }
-        if ((int)GameStateManager.m_GameState == 3)
+        if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.ThirdLevel)
         {
             PlayAudio("Third Level");
         }

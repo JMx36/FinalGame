@@ -4,33 +4,17 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    public bool isOpened { get;  set;} // took off private set and changed to public
+    public bool isOpened { get;  private set;} 
     private SpriteRenderer spriteRenderer; 
 
     [SerializeField]
     private GameObject player;
 
-   /* [SerializeField]
-    private int leverNum; //must be greater than 0 */
-
     private  float dist;
-    private LeverManager manager;
 
     // Start is called before the first frame update
     void Start()
-    {
-        manager = GetComponentInParent<LeverManager>();
-       int levervalue = PlayerPrefs.GetInt(this.name);
-        if (levervalue == 0)
-        {
-            isOpened = false;
-            
-        }
-        else
-        {
-            isOpened = true;
-        }
-        
+    {        
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
     private void Update()
@@ -43,8 +27,8 @@ public class Lever : MonoBehaviour
             {
                 isOpened = true;
                 spriteRenderer.sprite = LeverManager.leverManager.sprites[0];
-                /*PlayerPrefs.SetInt(name, leverNum);*/
-                manager.CheckLevers();
+ 
+                LeverManager.leverManager.CheckLevers();
             }
             
             else

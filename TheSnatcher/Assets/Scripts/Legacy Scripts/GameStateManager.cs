@@ -177,7 +177,7 @@ public class GameStateManager : MonoBehaviour
         {
             //for Quality of Live purposes, so that it takes the last life image away.  
             InGameUI.inGameUI.OnLoseLife(); 
-            //
+            //Loads GameOver scene
             GameOver();
         }
     }

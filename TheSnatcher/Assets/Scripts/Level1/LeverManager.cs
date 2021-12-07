@@ -6,9 +6,7 @@ public class LeverManager : MonoBehaviour
 {
     public GameObject portalOn;
     public GameObject portalOff;
-    private bool leversComplete;
-   /* private List<int> leverNums;*/
-
+    public bool leversComplete { get; private set; }
 
     private Lever[] levers;
     public List<Sprite> sprites = new List<Sprite> { };
@@ -35,18 +33,15 @@ public class LeverManager : MonoBehaviour
         if (leversComplete)
         {
             TurnPortalOn();
-            PortalScript.portal.Activate(true);
         }
     }
     public void TurnPortalOn()
     {
-            PortalScript.portal.Activate(true);
             portalOff.SetActive(false); //deactivates the Portal that is turned off
             portalOn.SetActive(true); //activates the Portal that is on
     }
     public void TurnPortalOff()
     {
-            PortalScript.portal.Activate(false);
             portalOn.SetActive(false); //deactivates the Portal that is turned on
             portalOff.SetActive(true); //activates the Portal that is off        
     }

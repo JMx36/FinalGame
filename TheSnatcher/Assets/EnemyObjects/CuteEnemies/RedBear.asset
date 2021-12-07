@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: RedBear
   Enemy: {fileID: 7732719575976178684, guid: 94d062244dd36d34b91326fc52421d50, type: 3}
-  speed: 35
+  speed: 45
   jumpForce: 30
   health: 100
   damage: 40
-  maxSpeed: 30
+  maxSpeed: 60

@@ -7,16 +7,23 @@ public class SpawnerManager : MonoBehaviour
     public List<GameObject> enemies = new List<GameObject> { };
     [SerializeField] private float delayTime;
     [SerializeField] private float startTime;
+
+    //stops the spawner from initation again
+    private bool pass = true;
     // Start is called before the first frame update
     void Awake()
     {
-        InvokeRepeating("SpawnEnemies", startTime, delayTime);
+       
     }
-    private void FixedUpdate()
+    private void Update()
     {
-        //Follow Player Script
+        if (Player.player.GetMovement() && pass)
+        {
+            pass = false;
+            Debug.Log("Invoking in 2");
+            InvokeRepeating("SpawnEnemies", startTime, delayTime);          
+        }
     }
-
     public void SpawnEnemies()
     {
         int random = Random.Range(0, 10);

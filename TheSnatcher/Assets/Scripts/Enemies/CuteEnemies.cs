@@ -86,6 +86,8 @@ public class CuteEnemies : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             Player.player.ApplyDamage(damage);
+            rb.velocity = new Vector2(0, 0);
+            Debug.Log(rb.velocity);
         }
         if (collision.gameObject.tag == "Edge")
         {

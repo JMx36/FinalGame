@@ -4,24 +4,11 @@ using UnityEngine;
 
 public class PortalScript : MonoBehaviour
 {
-    private static bool ActivePortal;
-
-    public static PortalScript portal;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        ActivePortal = false;
-        portal = this;
-    }
-    public void Activate(bool state)
-    {
-        ActivePortal = state;
-    }
+   // Start is called before the first frame update
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (ActivePortal)
+        if (LeverManager.leverManager.leversComplete)
         {
             if (collision.tag == "Player")
             {

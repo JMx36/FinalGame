@@ -64,7 +64,6 @@ public class Player : MonoBehaviour
             }
         }
        
-
         //If statements to open and close options
         if (Input.GetKeyDown(KeyCode.Escape) && !alreadyOpened)
         {

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: BrownBear
   Enemy: {fileID: 1170833384841757856, guid: 79177614dfa5f4e4585d3ecea0d9d46a, type: 3}
-  speed: 25
+  speed: 35
   jumpForce: 20
   health: 50
   damage: 20
-  maxSpeed: 30
+  maxSpeed: 60
