@@ -557,6 +557,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxEffectMultplier: {x: 0.5, y: 0}
   maximumDif: 80
+--- !u!1001 &328978786
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 236388407, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogueBox
+      value: 
+      objectReference: {fileID: 1852106501}
+    - target: {fileID: 236388407, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: sentenceAnimator
+      value: 
+      objectReference: {fileID: 795472359}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.067047
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.170898
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -6825.575
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563712, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310452465563715, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_Name
+      value: DialogueBox
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310453639692301, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 201
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310453871551470, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_text
+      value: name
+      objectReference: {fileID: 0}
+    - target: {fileID: 471310453871551470, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogue.sentences.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogue.sentences.Array.data[0]
+      value: Whoa..where did that portal take me to?
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogue.sentences.Array.data[1]
+      value: Anyway, maybe I can find another one here.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogue.sentences.Array.data[2]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogue.sentences.Array.data[3]
+      value: Why do I hear boss music... (oh no)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
 --- !u!1 &373590337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7897386255780383415, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
@@ -1364,6 +1461,42 @@ MonoBehaviour:
   - {fileID: 1170833384841757856, guid: 79177614dfa5f4e4585d3ecea0d9d46a, type: 3}
   delayTime: 0.5
   startTime: 1
+--- !u!1 &795472357 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1247812812383048431, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+  m_PrefabInstance: {fileID: 328978786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &795472359
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795472357}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 86367157d3bfccc479f22cde4d74fd74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!225 &795472360
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795472357}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &828489994
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,7 +2143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663759099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 63.780083, y: 1.0940909, z: -10}
+  m_LocalPosition: {x: 63.7695, y: 1.1219344, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2147,6 +2280,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parallaxEffectMultplier: {x: 0.6, y: 0}
   maximumDif: 80
+--- !u!1 &1852106496 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 471310453639692300, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+  m_PrefabInstance: {fileID: 328978786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1852106501
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852106496}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ae959070bfc3104ca22405483944e1f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1933678092
 GameObject:
   m_ObjectHideFlags: 0
