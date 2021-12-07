@@ -8,6 +8,8 @@ public class EnemyDetection : MonoBehaviour
 
     private GameObject player;
 
+    private Rigidbody2D rb;
+
     [SerializeField]
     private float enemyDistance = 5f;
 
@@ -30,7 +32,7 @@ public class EnemyDetection : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-
+        rb = GetComponent<Rigidbody2D>();
         maxMovementLeft = transform.position.x - enemyDistance;
         maxMovementRight = transform.position.x + enemyDistance;
     }
@@ -80,6 +82,8 @@ public class EnemyDetection : MonoBehaviour
     }
     private void MoveEnemy(int direction)
     {
-        transform.position = new Vector3(transform.position.x + (direction * enemyMovement), transform.position.y, transform.position.z);
+        rb.MovePosition(rb.position +  new Vector2(direction, 0) * enemyMovement * Time.fixedDeltaTime);
+
+        //transform.position = new Vector3(transform.position.x + (direction * enemyMovement * Time.deltaTime), transform.position.y, transform.position.z);
     }
 }

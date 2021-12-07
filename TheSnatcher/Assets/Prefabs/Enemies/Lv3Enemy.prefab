@@ -188,5 +188,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDistance: 5
-  enemyMovement: 0.01
+  enemyMovement: 3
   enemyAttackRange: 3
