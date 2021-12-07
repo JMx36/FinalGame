@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour
             Debug.Log("Sound : " + musName + " was not found.");
             return;
         }
-        Debug.Log("Playing " + musName);
+        Debug.Log("Playing Audio of " + musName);
         s.source.Play();
     }
 

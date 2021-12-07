@@ -9,10 +9,23 @@ public class InGameUI : MonoBehaviour
 
     public static InGameUI inGameUI;
 
-    public void Awake()
+    public void Start()
     {
         inGameUI = this;
-       // Debug.Log("InGameUI starting");
+        // Debug.Log("InGameUI starting");
+        if (GameStateManager.m_Manager.resume)
+        {
+            Debug.Log("Resuming lives");
+            inGameUI.Resume(GameStateManager.m_Manager.currentLives);
+            GameStateManager.m_Manager.SetResumeBool(false);
+        }
+        else if (GameStateManager.m_Manager.newGame)
+        {
+            Debug.Log("Reseting Lives for New Game");
+            inGameUI.NewGame();
+            GameStateManager.m_Manager.SetNewGameBool(false);
+        }
+
     }
     public void OnLoseLife()
     {

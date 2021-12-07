@@ -16,7 +16,7 @@ public class SceneLoaderManager : MonoBehaviour
         LevelOne,
         LevelTwo,
         LevelThree,
-        Win_Screen,
+        WinScreen,
         GameOverScreen,
     }
     public void Awake()
@@ -29,7 +29,7 @@ public class SceneLoaderManager : MonoBehaviour
     }
     public void LoadWin()
     {
-        StartCoroutine(LoadLevel(0, Scene.Win_Screen.ToString()));
+        StartCoroutine(LoadLevel(0, Scene.WinScreen.ToString()));
     }
     public void Restart()
     {
@@ -41,7 +41,13 @@ public class SceneLoaderManager : MonoBehaviour
     }
     public void LoadScene()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1, ""));
+        //Debug.Log("Number of scenes " + SceneManager.sceneCountInBuildSettings);
+        if(SceneManager.sceneCountInBuildSettings - 1 < SceneManager.GetActiveScene().buildIndex + 1)
+        {
+            Debug.Log("Build index out of range");
+        }
+        else 
+            StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1, ""));
     }
     public void FirstLevel()
     {

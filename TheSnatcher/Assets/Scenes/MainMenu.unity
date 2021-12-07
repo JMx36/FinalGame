@@ -796,8 +796,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daa3c22bfad32f94fbe8688af05ddf0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingLives: 0
+  startingLives: 3
   TestingLevel: 0
+  testing: 0
 --- !u!4 &1145037553
 Transform:
   m_ObjectHideFlags: 0

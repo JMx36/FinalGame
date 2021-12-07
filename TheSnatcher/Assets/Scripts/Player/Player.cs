@@ -30,8 +30,7 @@ public class Player : MonoBehaviour
     
     public static Player player; 
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -45,23 +44,26 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (allowMovement)
+        {
+            animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
+            moveHorizontal = Input.GetAxisRaw("Horizontal");
+
+            if (moveHorizontal > 0)
+                sprite.flipX = false;
+
+            else if (moveHorizontal < 0)
+            {
+                sprite.flipX = true;
+            }
+
+            if (Input.GetAxisRaw("Jump") > 0 && !isJumping)
+            {
+                //  Debug.Log("Jumping");                    
+                rb2d.velocity = new Vector2(currentXvelocity, jumpForce);
+            }
+        }
        
-        animator.SetFloat("Speed", Mathf.Abs (moveHorizontal));
-        moveHorizontal = Input.GetAxisRaw("Horizontal");
-
-        if (moveHorizontal > 0)
-            sprite.flipX = false;
-
-        else if (moveHorizontal < 0)
-        {
-            sprite.flipX = true;
-        }
-
-        if (Input.GetAxisRaw("Jump") > 0 && !isJumping)
-        {
-          //  Debug.Log("Jumping");                    
-            rb2d.velocity = new Vector2(currentXvelocity, jumpForce);
-        }
 
         //If statements to open and close options
         if (Input.GetKeyDown(KeyCode.Escape) && !alreadyOpened)
@@ -74,6 +76,9 @@ public class Player : MonoBehaviour
             MenuSettings.menuSettings.Close();
             alreadyOpened = false;
         }
+
+
+        //Testing
 
         if (Mathf.Abs(rb2d.velocity.y) > 0)
         {

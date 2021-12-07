@@ -5,27 +5,35 @@ using UnityEngine;
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager m_Manager;
-
+    // Player's lives
     [SerializeField]
     private int startingLives;
-    private int currentLives; // added current lives for NewGame and Pause methods below
+    public int currentLives { get; private set; } 
 
-    public int TestingLevel; //meant for testing GameState
+    // Varaibles meant for testing purposes
+    public int TestingLevel; 
+    public bool testing;
 
-    private bool resume;
+    //Bools to change InGameUI (lives) to either a resume or newGame state at the beginning of each level
+    public bool resume { get; private set; }
 
-    private bool newGame;
+    public bool newGame { get; private set; }
+
+    //Game states
     public enum GAMESTATE
     {
         Menu,
         FirstLevel,
         SecondLevel,
         ThirdLevel,
-        Paused,      
+        Paused,
+        StartDialogue,
+        EndDialogue,
         PlayerWon,        
         PlayerLost
     }
 
+    //Allows other scripts to access the current state of the game but without being able to change its value
     public static GAMESTATE m_GameState { get; private set; }
 
     private void Awake()
@@ -36,44 +44,28 @@ public class GameStateManager : MonoBehaviour
             DontDestroyOnLoad(m_Manager);
         }
         else Destroy(this);
-        
-        //if statement to check if player saved progress or won the game on a previous play through
-        //still have to test this
-        if(PlayerPrefs.GetInt("Won") == 5)
+
+        if (PlayerPrefs.GetInt("Won") == (int)GAMESTATE.PlayerWon)
         {
             m_GameState = GAMESTATE.PlayerWon;
-            Debug.Log("Player has won.Unlocking new option");
+            Debug.Log("Player has won. Unlocking new option");
         }
-        else if(PlayerPrefs.GetInt("State") >= 1 && PlayerPrefs.GetInt("State") <= 3)
-        {
-            m_GameState = (GAMESTATE)PlayerPrefs.GetInt("State");
-            Debug.Log("Player is in state " + m_GameState.ToString());
-        }
-        else
+        else 
         {
             m_GameState = GAMESTATE.Menu;
             m_Manager.currentLives = m_Manager.startingLives;
-            Debug.Log("Player didnt save. State:" + m_GameState.ToString() + "Lives " + m_Manager.currentLives);
+            Debug.Log("Player didnt win, so new button will not appeared. GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
         }
-        
-        //overrides the "else" above
-        if (TestingLevel != 0 && TestingLevel <= 3 && !m_Manager.resume)
+
+        //overrides the default GAMESTATE mode
+        if (TestingLevel > 0 && TestingLevel <= 3 && testing)
         {
+            Debug.Log("Testing Level " + TestingLevel);
             m_GameState = (GAMESTATE)TestingLevel;           
             m_Manager.currentLives = m_Manager.startingLives;
 
             Debug.Log("Initial state: " + m_GameState.ToString());
-            Debug.Log(m_Manager.currentLives);
-        }
-        else if (m_Manager.resume && InGameUI.inGameUI != null)
-        {
-            InGameUI.inGameUI.Resume(m_Manager.currentLives);
-            m_Manager.resume = false;
-        }
-        else if (m_Manager.newGame)
-        {
-            InGameUI.inGameUI.NewGame();
-            m_Manager.newGame = false;
+           // Debug.Log(m_Manager.currentLives);
         }
 
     }
@@ -93,6 +85,10 @@ public class GameStateManager : MonoBehaviour
         {
             MainMenu();
         }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log(m_GameState.ToString());
+        }
     }
     /// <summary>
     /// Game States of the player. Useful to know on what level the player was before quitting game (only applicable if the player saves). 
@@ -103,11 +99,26 @@ public class GameStateManager : MonoBehaviour
         m_GameState = GAMESTATE.Menu;
         SceneLoaderManager.m_SceneManager.LoadMainMenu();
     }
+    public static void DialogueScene()
+    {
+        if(m_GameState == GAMESTATE.Menu)
+        {
+            m_GameState = GAMESTATE.StartDialogue;
+            Debug.Log("DialogueScene GameState is " + m_GameState);
+        }
+        else if(m_GameState == GAMESTATE.ThirdLevel)
+        {
+            m_GameState = GAMESTATE.EndDialogue;
+            Debug.Log(m_GameState);
+        }
+
+        SceneLoaderManager.m_SceneManager.LoadScene(); 
+    }
 
     public static void FirstLevel()
     {
         m_GameState = GAMESTATE.FirstLevel;
-        SceneLoaderManager.m_SceneManager.LoadScene(); 
+        SceneLoaderManager.m_SceneManager.FirstLevel(); 
     }         
 
     public static void SecondLevel()
@@ -171,6 +182,15 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    public void SetResumeBool(bool value)
+    {
+        m_Manager.resume = value;
+    }
+    public void SetNewGameBool(bool value)
+    {
+        m_Manager.newGame = value;
+    }
+
     /// <summary>
     /// Player progression, Restarts and Quitting
     /// </summary>
@@ -178,13 +198,19 @@ public class GameStateManager : MonoBehaviour
     //Resest Playerfebs and starts a new game
     public static void NewGame()
     {
+      //Resets values to default ones
         m_Manager.newGame = true;
-        FirstLevel();
+
+        m_GameState = GAMESTATE.Menu;
+
         m_Manager.currentLives = m_Manager.startingLives;
-   //     InGameUI.inGameUI.NewGame();
+
+        DialogueScene();       
+
+   //   InGameUI.inGameUI.NewGame();
         PlayerPrefs.SetInt("State", (int)m_GameState); //test whether this works
         PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
-        Debug.Log("Lives " + m_Manager.currentLives + ". Player state is " + m_GameState.ToString());
+        Debug.Log(" NewGame Log: Lives " + m_Manager.currentLives + ". Player state is " + m_GameState.ToString());
     }
 
     public static void SaveGame() //saves the lives and level of the player when run
@@ -224,30 +250,35 @@ public class GameStateManager : MonoBehaviour
     //Resumes to the last level of the player and assigns the corresponding lives if saved
     public static void Resume()
     {
-        m_Manager.resume = true;
-        switch (m_GameState)
+        if (PlayerPrefs.GetInt("State") >= 1 && PlayerPrefs.GetInt("State") <= 3)
         {
-            case GAMESTATE.FirstLevel:
-                FirstLevel();
-              //  m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
-                break;
-            case GAMESTATE.SecondLevel:
-                SecondLevel();
-              //  m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
-                break;
-            case GAMESTATE.ThirdLevel:
-                ThirdLevel();
-              //  m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
-                break;
-            default:
-                MainMenu(); //Maybe have a display box that says the player did not save?
-                Debug.Log("Level not saved");
-                break;
+            m_GameState = (GAMESTATE)PlayerPrefs.GetInt("State");
+            //  Debug.Log("Player is in state " + m_GameState.ToString());
+            m_Manager.resume = true;
+
+            switch (m_GameState)
+            {
+                case GAMESTATE.FirstLevel:
+                    FirstLevel();
+                    //  m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
+                    break;
+                case GAMESTATE.SecondLevel:
+                    SecondLevel();
+                    //  m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
+                    break;
+                case GAMESTATE.ThirdLevel:
+                    ThirdLevel();
+                    //  m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
+                    break;
+            }
+
+            if (m_GameState != GAMESTATE.Menu)
+            {
+                m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
+            }
         }
-        if(m_GameState != GAMESTATE.Menu)
-        {
-            m_Manager.currentLives = PlayerPrefs.GetInt("Lives");          
-        }
+        else
+            Debug.Log("There is no saving data to resume: Error when resume button clicked");
     }
     public static void QuitGame()
     {
