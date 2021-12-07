@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 270719766}
   - component: {fileID: 270719765}
   m_Layer: 5
-  m_Name: waking up text
+  m_Name: text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.42297968, g: 0.5847828, b: 0.8396226, a: 1}
+  m_Color: {r: 0.5807733, g: 0.31384832, b: 0.7169812, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -386,12 +386,11 @@ MonoBehaviour:
   dialogue:
     characterName: 
     sentences:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
+    - Yep... it only took one shot...
+    - not anticlimatic at all..
+    - But surely someone THAT weak couldn't have been the one behind all of this..
+    - Maybe there's more people invovled and more places to discover...
+    - To be continued...
 --- !u!114 &1033231865
 MonoBehaviour:
   m_ObjectHideFlags: 0
