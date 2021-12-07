@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cacd0ba7cb08af4ca35d33cc3735701, type: 3}
-  m_Name: Monsterslv1
+  m_Name: Octopus
   m_EditorClassIdentifier: 
-  Name: VineMonsters
+  Name: Octopus
   Monster: {fileID: 2854318425756081464, guid: 6a0ee5f357c31fc4eaa22e585d2a7e24, type: 3}
   speed: 1000
   health: 100

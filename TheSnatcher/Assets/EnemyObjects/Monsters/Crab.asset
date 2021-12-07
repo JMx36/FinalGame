@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cacd0ba7cb08af4ca35d33cc3735701, type: 3}
-  m_Name: Monsterslv3
+  m_Name: Crab
   m_EditorClassIdentifier: 
   Name: Crab
   Monster: {fileID: 9137052543568440536, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
