@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyDistance: 5
   enemyMovement: 0
-  enemyAttackRange: 5
+  enemyAttackRange: 3
 --- !u!95 &1506656973
 Animator:
   serializedVersion: 3

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: First Level
-    clip: {fileID: 8300000, guid: bdb123b0c794111459e5e6874c7841aa, type: 3}
+    clip: {fileID: 8300000, guid: 34f9d87d5b8d4c64b906be0e4487e20a, type: 3}
     volume: 1
     pitch: 1.21
     loop: 1
@@ -63,7 +63,7 @@ MonoBehaviour:
   - name: Third Level
     clip: {fileID: 8300000, guid: 9ba8e66d1bfeca4469e1a208a525f3da, type: 3}
     volume: 1
-    pitch: 1.21
+    pitch: 0.99
     loop: 1
     audioMixer: Master
     mute: 0
