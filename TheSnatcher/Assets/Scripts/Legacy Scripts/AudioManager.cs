@@ -14,7 +14,10 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        audioManager = this;
+        //This gets the groups of Master from the audiomixer
         AudioMixerGroup[] groups = audioMixer.FindMatchingGroups("Master");
+
         foreach (Sounds s in sounds)
         {
             bool assigned = false;
@@ -25,27 +28,30 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.mute = s.mute;
 
+            //this will assing the sound to a mixer group based on the name of the AudioMixer assigned to the sound 
             foreach (AudioMixerGroup a in groups)
             {
+                //Is the group name the same as the audio mixer name?
                 if (a.name == s.audioMixer)
                 {
                     s.source.outputAudioMixerGroup = a;
                     assigned = true;
                 }
             }
-
+            //if the sound wasn't assigned a group, it will default to master. This is in case something is spelled wrong
             if (!assigned)
             {
                 s.source.outputAudioMixerGroup = groups[0];
-                Debug.Log("Assigned to Master");
+                Debug.Log("Assigned to Master as no group name was found. Make sure the name is spell correctly");
             }
         }
     }
-    private void Start() //might have problems loading in from scene to scene if we keep a singleton
+    //It will play the audio based on GameState the player is in
+    private void Start() 
     {
         if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.Menu)
         {
-
+            PlayAudio("Main Menu");
         }
         if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel)
         {
@@ -64,12 +70,15 @@ public class AudioManager : MonoBehaviour
     public void PlayAudio(string musName)
     {
         Sounds s = Array.Find(sounds, sounds => sounds.name == musName);
+
         if (s == null)
         {
             Debug.Log("Sound : " + musName + " was not found.");
             return;
         }
+
         Debug.Log("Playing Audio of " + musName);
+
         s.source.Play();
     }
 

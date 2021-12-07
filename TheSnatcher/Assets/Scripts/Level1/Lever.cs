@@ -33,7 +33,7 @@ public class Lever : MonoBehaviour
             
             else
             {
-                //add sound effects
+                AudioManager.audioManager.PlayAudio("Lever Done");
             }
         }
     }

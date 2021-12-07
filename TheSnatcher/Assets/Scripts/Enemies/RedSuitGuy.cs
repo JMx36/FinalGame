@@ -5,9 +5,7 @@ using UnityEngine;
 public class RedSuitGuy : MonoBehaviour
 {
     [SerializeField]
-    private Animator deathAni;
-    
-
+    private Animator deathAni;    
     
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,6 +13,10 @@ public class RedSuitGuy : MonoBehaviour
         {
             deathAni.SetBool("IfKilled", true);
         }
+
+        GameStateManager.DialogueScene();
     }
+
+
 
 }

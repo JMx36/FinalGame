@@ -16,11 +16,15 @@ public class MenuSettings : MonoBehaviour
     }
     public void Open()
     {
+        GameStateManager.Pause();
+        AudioManager.audioManager.PlayAudio("Option Button");
         Player.player.AllowMovement(false);
         settings.SetActive(true);
     }
     public void Close()
     {
+        GameStateManager.Pause();
+        AudioManager.audioManager.PlayAudio("Option Button");
         Player.player.AllowMovement(true);
         settings.SetActive(false);
     }
@@ -31,16 +35,19 @@ public class MenuSettings : MonoBehaviour
     }
     public void Save()
     {
-      //  Debug.Log("Saving");
+        AudioManager.audioManager.PlayAudio("Option Button");
+        //  Debug.Log("Saving");
         GameStateManager.SaveGame();
     }
     public void Retry()
     {
+        AudioManager.audioManager.PlayAudio("Option Button");
         GameStateManager.Restart();
     }
     public void Quit()
     {
-      //  Debug.Log("Quitting");
+        AudioManager.audioManager.PlayAudio("Option Button");
+        //  Debug.Log("Quitting");
         GameStateManager.QuitGame();
     }
 }

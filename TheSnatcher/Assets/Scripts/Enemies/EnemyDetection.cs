@@ -36,7 +36,7 @@ public class EnemyDetection : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixUpdate()
     {
         playerDistance = Vector3.Distance(player.transform.position, transform.position);
 

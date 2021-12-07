@@ -25,11 +25,9 @@ public class LeverManager : MonoBehaviour
         leversComplete = true;
         foreach (Lever lever in levers)
         {
-            //  Debug.Log("Before !  " + lever.isOpened + " and After !" + !lever.isOpened);
             if (!lever.isOpened) leversComplete = false;
-            /*int num = PlayerPrefs.GetInt(lever.name);
-            leverNums.Add(num);*/
         }
+
         if (leversComplete)
         {
             TurnPortalOn();

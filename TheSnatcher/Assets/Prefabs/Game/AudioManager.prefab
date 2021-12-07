@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6496895066959590383}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 43.227016, y: 27.068613, z: -6811.796}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -65,6 +65,54 @@ MonoBehaviour:
     volume: 1
     pitch: 1.21
     loop: 1
+    audioMixer: Master
+    mute: 0
+    source: {fileID: 0}
+  - name: Button Sound
+    clip: {fileID: 8300000, guid: 749196ddcf00f644dba1078aee23f92a, type: 3}
+    volume: 0.609
+    pitch: 1.04
+    loop: 0
+    audioMixer: Master
+    mute: 0
+    source: {fileID: 0}
+  - name: Lost Life
+    clip: {fileID: 8300000, guid: 0095546a2a9e67b4abc7c1318217c01c, type: 3}
+    volume: 1
+    pitch: 1.21
+    loop: 0
+    audioMixer: Master
+    mute: 0
+    source: {fileID: 0}
+  - name: Main Menu
+    clip: {fileID: 8300000, guid: 9637f50482c587d479dc3778b438a650, type: 3}
+    volume: 1
+    pitch: 1.21
+    loop: 1
+    audioMixer: Master
+    mute: 0
+    source: {fileID: 0}
+  - name: Lever Done
+    clip: {fileID: 8300000, guid: 8c79aed07b0d29740ae781e8e03d788b, type: 3}
+    volume: 0.842
+    pitch: 1.21
+    loop: 0
+    audioMixer: Master
+    mute: 0
+    source: {fileID: 0}
+  - name: Lever Done
+    clip: {fileID: 8300000, guid: 8c79aed07b0d29740ae781e8e03d788b, type: 3}
+    volume: 0.842
+    pitch: 1.21
+    loop: 0
+    audioMixer: Master
+    mute: 0
+    source: {fileID: 0}
+  - name: Option Button
+    clip: {fileID: 8300000, guid: 749196ddcf00f644dba1078aee23f92a, type: 3}
+    volume: 0.767
+    pitch: 0.71
+    loop: 0
     audioMixer: Master
     mute: 0
     source: {fileID: 0}

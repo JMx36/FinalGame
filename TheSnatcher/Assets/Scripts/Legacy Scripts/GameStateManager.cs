@@ -8,7 +8,10 @@ public class GameStateManager : MonoBehaviour
     // Player's lives
     [SerializeField]
     private int startingLives;
-    public int currentLives { get; private set; } 
+    public int currentLives { get; private set; }
+
+    //bool for pausing game while in Options
+    private bool paused;
 
     // Varaibles meant for testing purposes
     public int TestingLevel; 
@@ -16,7 +19,6 @@ public class GameStateManager : MonoBehaviour
 
     //Bools to change InGameUI (lives) to either a resume or newGame state at the beginning of each level
     public bool resume { get; private set; }
-
     public bool newGame { get; private set; }
 
     //Game states
@@ -26,7 +28,6 @@ public class GameStateManager : MonoBehaviour
         FirstLevel,
         SecondLevel,
         ThirdLevel,
-        Paused,
         StartDialogue,
         EndDialogue,
         PlayerWon,        
@@ -45,17 +46,20 @@ public class GameStateManager : MonoBehaviour
         }
         else Destroy(this);
 
+        m_GameState = GAMESTATE.Menu; //Default GameState
+
+        m_Manager.currentLives = m_Manager.startingLives; //Assigning lives 
+
         if (PlayerPrefs.GetInt("Won") == (int)GAMESTATE.PlayerWon)
-        {
-            m_GameState = GAMESTATE.PlayerWon;
+        { 
             Debug.Log("Player has won. Unlocking new option");
         }
-        else 
+        else
         {
-            m_GameState = GAMESTATE.Menu;
-            m_Manager.currentLives = m_Manager.startingLives;
             Debug.Log("Player didnt win, so new button will not appeared. GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
         }
+
+        Debug.Log("GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
 
         //overrides the default GAMESTATE mode
         if (TestingLevel > 0 && TestingLevel <= 3 && testing)
@@ -67,6 +71,8 @@ public class GameStateManager : MonoBehaviour
             Debug.Log("Initial state: " + m_GameState.ToString());
            // Debug.Log(m_Manager.currentLives);
         }
+
+        paused = false;
 
     }
 
@@ -89,6 +95,11 @@ public class GameStateManager : MonoBehaviour
         {
             Debug.Log(m_GameState.ToString());
         }
+
+        if (Input.anyKeyDown && m_GameState == GAMESTATE.PlayerWon)
+        {
+            MainMenu();
+        }
     }
     /// <summary>
     /// Game States of the player. Useful to know on what level the player was before quitting game (only applicable if the player saves). 
@@ -109,7 +120,7 @@ public class GameStateManager : MonoBehaviour
         else if(m_GameState == GAMESTATE.ThirdLevel)
         {
             m_GameState = GAMESTATE.EndDialogue;
-            Debug.Log(m_GameState);
+            Debug.Log("DialogueScene GameState is " + m_GameState);
         }
 
         SceneLoaderManager.m_SceneManager.LoadScene(); 
@@ -151,22 +162,24 @@ public class GameStateManager : MonoBehaviour
     /// </summary>
     
     public static void Pause() //still have to fix this
-    {       
-        if (m_GameState != GAMESTATE.Paused)
+    {
+        if (!m_Manager.paused)
         {
-            //create a provisional GameState to save the GameState of the game when paused
-            m_GameState = GAMESTATE.Paused;
+            Debug.Log("pausing");
             Time.timeScale = 0;
+            m_Manager.paused = true;
         }
-        else
+        else 
         {
-            m_GameState = GAMESTATE.FirstLevel; //chagned Playing to FirstLevel
-            Time.timeScale = 1;  
+            Debug.Log("unpausing");
+            Time.timeScale = 1;
+            m_Manager.paused = false;
         }
     }
     public void LifeLost()
     {
-       // Debug.Log(m_Manager.currentLives);
+        // Debug.Log(m_Manager.currentLives);
+        AudioManager.audioManager.PlayAudio("Lost Life");
         if (m_Manager.currentLives > 1)
         {
          //   Debug.Log("Losing life");
@@ -243,7 +256,7 @@ public class GameStateManager : MonoBehaviour
         }
         else
         {
-            SceneLoaderManager.m_SceneManager.Restart();
+            Resume();
         }
     }
 

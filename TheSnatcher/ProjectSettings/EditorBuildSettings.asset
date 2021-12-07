@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelThree.unity
     guid: 0c82dc3d2bcbbb84aa8a28a8a6e7cdbd
   - enabled: 1
+    path: Assets/Scenes/EndingContexts.unity
+    guid: 2ecba14b5f6180e45995ecefb35d130b
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: a5ebbc8fa1eeeb84e92abb6146dc91a6
+  - enabled: 1
     path: Assets/Scenes/GameOverScreen.unity
     guid: adea0b27ea2a9e14aa3ff89c1dbff190
   m_configObjects: {}
