@@ -28,7 +28,7 @@ public class AudioManager : MonoBehaviour
             s.source.loop = s.loop;
             s.source.mute = s.mute;
 
-            //this will assing the sound to a mixer group based on the name of the AudioMixer assigned to the sound 
+            //this will assign the sound to a mixer group based on the name of the AudioMixer assigned to the sound 
             foreach (AudioMixerGroup a in groups)
             {
                 //Is the group name the same as the audio mixer name?

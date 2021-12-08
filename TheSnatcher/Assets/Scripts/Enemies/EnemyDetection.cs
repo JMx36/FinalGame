@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//coded by Emily Elizabeth Chavez
 public class EnemyDetection : MonoBehaviour
 {
     private GameObject enemy;
@@ -27,29 +28,28 @@ public class EnemyDetection : MonoBehaviour
 
     private bool moveLeft;
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
-        maxMovementLeft = transform.position.x - enemyDistance;
+        // enemy travels left to right on a set path 
+        maxMovementLeft = transform.position.x - enemyDistance; 
         maxMovementRight = transform.position.x + enemyDistance;
     }
 
-    // Update is called once per frame
     void Update()
     {
         playerDistance = Vector3.Distance(player.transform.position, transform.position);
 
-        if (playerDistance < enemyAttackRange)
+        if (playerDistance < enemyAttackRange) // for when the player is close enough in the enemy's range
         {
             if (player.transform.position.x < transform.position.x)
             {
-                MoveEnemy(-1);
+                MoveEnemy(-1); //makes enemy detect and follow player to the left 
             }
             else
             {
-                MoveEnemy(1);
+                MoveEnemy(1); //makes enemy detect and follow player to the right
             }
         }
         else
@@ -58,31 +58,29 @@ public class EnemyDetection : MonoBehaviour
             {
                 if (transform.position.x > maxMovementLeft)
                 {
-                    MoveEnemy(-1);
+                    MoveEnemy(-1); //moves left
                 }
                 else
                 {
-                    moveLeft = false;
+                    moveLeft = false; // moves right
                 }
             }
             else
             {
                 if (transform.position.x < maxMovementRight)
                 {
-                    MoveEnemy(1) ;
+                    MoveEnemy(1) ; //moves right
                 }
                 else
                 {
-                    moveLeft = true;
+                    moveLeft = true; //moves left
                 }
             }
 
         }
     }
-    private void MoveEnemy(int direction)
+    private void MoveEnemy(int direction) 
     {
         rb.MovePosition(rb.position +  new Vector2(direction, 0) * enemyMovement * Time.fixedDeltaTime);
-
-//        transform.position = new Vector3(transform.position.x + (direction * enemyMovement * Time.deltaTime), transform.position.y, transform.position.z);
     }
 }
