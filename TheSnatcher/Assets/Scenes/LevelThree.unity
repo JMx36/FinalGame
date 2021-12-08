@@ -2582,6 +2582,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 822039978}
     m_Modifications:
+    - target: {fileID: 1506656974, guid: 6d5101a1d5d88a84b92d67ad09f940b4, type: 3}
+      propertyPath: noticed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6636610574372992614, guid: 6d5101a1d5d88a84b92d67ad09f940b4, type: 3}
       propertyPath: m_RootOrder
       value: 11
@@ -3128,17 +3132,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 822039978}
     m_Modifications:
+    - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
+      propertyPath: enemyAttackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
+      propertyPath: noticed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.25
+      value: 33.57
       objectReference: {fileID: 0}
     - target: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.08
+      value: -3.01
       objectReference: {fileID: 0}
     - target: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4123,7 +4135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: enemyAttackRange
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: noticed
@@ -4135,7 +4147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.74
+      value: 26.11
       objectReference: {fileID: 0}
     - target: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4196,7 +4208,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: enemyAttackRange
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: noticed
@@ -4411,7 +4423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: enemyAttackRange
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: noticed
@@ -4480,7 +4492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: enemyAttackRange
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: noticed
@@ -5049,7 +5061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: enemyAttackRange
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: noticed
@@ -5512,7 +5524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1684624870, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: enemyAttackRange
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3981437402467731857, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
       propertyPath: noticed

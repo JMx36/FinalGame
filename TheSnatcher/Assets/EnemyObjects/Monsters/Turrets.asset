@@ -16,4 +16,4 @@ MonoBehaviour:
   Monster: {fileID: 7867110564514325068, guid: 6d5101a1d5d88a84b92d67ad09f940b4, type: 3}
   speed: 0
   health: 100
-  damage: 40
+  damage: 35

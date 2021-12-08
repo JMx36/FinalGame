@@ -148,7 +148,7 @@ MonoBehaviour:
   enemyBullet: {fileID: 5196178033747345990, guid: bbecd572b8b48544cb471a19c62bbc0d, type: 3}
   damageTaken: 35
   coolDown: 3
-  noticed: 10
+  noticed: 5
 --- !u!61 &1506656978
 BoxCollider2D:
   m_ObjectHideFlags: 0
