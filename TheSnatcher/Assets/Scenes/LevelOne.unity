@@ -417,7 +417,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53305085}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145.33, y: 1.5400001, z: -10}
+  m_LocalPosition: {x: -4.63, y: 1.5400001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1727491144}
@@ -4945,7 +4945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5391483536058317815, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 143.2
+      value: -7.83
       objectReference: {fileID: 0}
     - target: {fileID: 5391483536058317815, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6755,7 +6755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2021994023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7185,7 +7185,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2132979424}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 145.33, y: 1.5400001, z: -10}
+  m_LocalPosition: {x: -4.63, y: 1.5400001, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7399,12 +7399,12 @@ PrefabInstance:
       value: Save
       objectReference: {fileID: 0}
     - target: {fileID: 4611710914564154717, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
+      propertyPath: m_AnchorMax.x
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4611710914758387216, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+    - target: {fileID: 4611710914564154717, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4611710914758387217, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_Pivot.x
@@ -7507,8 +7507,16 @@ PrefabInstance:
       value: AdjVolume
       objectReference: {fileID: 0}
     - target: {fileID: 4611710915346817517, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611710915346817517, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4611710915346817517, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7048094999119050786, guid: cc6b47c77dee21043b4b0b0805ea363b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

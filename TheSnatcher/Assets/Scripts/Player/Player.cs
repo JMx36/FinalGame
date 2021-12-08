@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
         if (allowMovement)
         {
             animator.SetFloat("Speed", Mathf.Abs(moveHorizontal));
-            moveHorizontal = Input.GetAxisRaw("Horizontal");
+            moveHorizontal = Input.GetAxisRaw("Horizontal");  // to move the player left and right with A and D keys
 
             if (moveHorizontal > 0)
                 sprite.flipX = false;
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
                 sprite.flipX = true;
             }
 
-            if (Input.GetAxisRaw("Jump") > 0 && !isJumping)
+            if (Input.GetAxisRaw("Jump") > 0 && !isJumping) // to move the player up and with W key
             {
                 //  Debug.Log("Jumping");                    
                 rb2d.velocity = new Vector2(currentXvelocity, jumpForce);
@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
             animator.SetBool("IsJumping", isJumping);
         }
     }
-    public void ApplyDamage(int damage)
+    public void ApplyDamage(int damage) // damage taken away from player
     {
         currentHealth -= damage;
         Debug.Log(currentHealth);
