@@ -8,23 +8,22 @@ public class PortalScript : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (LeverManager.leverManager.leversComplete || GameStateManager.m_GameState == GameStateManager.GAMESTATE.SecondLevel)
+        //  Debug.Log("Teleporting Player"); 
+        if (collision.tag == "Player")
         {
-            if (collision.tag == "Player")
+            if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.SecondLevel)
             {
-                //  Debug.Log("Teleporting Player"); 
+                GameStateManager.ThirdLevel();
+            }
+            else if (LeverManager.leverManager.leversComplete)
+            {                
                 if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel)
                 {
-                   GameStateManager.SecondLevel();
-                    
-                }
-                else if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.SecondLevel)
-                {
-                    GameStateManager.ThirdLevel();
-                }
-                else
-                    Debug.Log("Level non existent. Current GameState level is " + GameStateManager.m_GameState.ToString());                    
+                    GameStateManager.SecondLevel();
+                }                         
             }
+            else
+                Debug.Log("Level non existent. Current GameState level is " + GameStateManager.m_GameState.ToString());
         }
     }
 }

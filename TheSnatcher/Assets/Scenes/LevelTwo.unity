@@ -254,11 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: duration
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: moveUnits
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: moveSideWays
@@ -911,6 +911,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2028819720000734474, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
+      propertyPath: m_Size.x
+      value: 0.15868825
+      objectReference: {fileID: 0}
+    - target: {fileID: 2028819720000734474, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0005441755
+      objectReference: {fileID: 0}
     - target: {fileID: 7730420239699540980, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
       propertyPath: m_Name
       value: OrangeBlock (1)
@@ -920,16 +928,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.844002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
       propertyPath: m_LocalScale.y
       value: 26.506008
       objectReference: {fileID: 0}
     - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 122.65
+      value: 123.04
       objectReference: {fileID: 0}
     - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.2666
+      value: -4.97
       objectReference: {fileID: 0}
     - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2117,11 +2129,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: duration
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: moveUnits
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 29fed52b068bce34c886240817f8c297, type: 3}
@@ -3061,11 +3073,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: duration
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491792, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: moveUnits
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491793, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_IsTrigger
@@ -3089,6 +3101,7 @@ GameObject:
   - component: {fileID: 1558286745}
   - component: {fileID: 1558286744}
   - component: {fileID: 1558286743}
+  - component: {fileID: 1558286746}
   m_Layer: 0
   m_Name: PortalOn
   m_TagString: Untagged
@@ -3199,6 +3212,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1558286746
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558286741}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.106249444, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.32, y: 0.32}
+    newSize: {x: 0.32, y: 0.32}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.04462786, y: 0.32}
+  m_EdgeRadius: 0
 --- !u!1 &1599843686
 GameObject:
   m_ObjectHideFlags: 0
@@ -3309,11 +3348,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4666838607541740131, guid: 47692ab19a8f76d45bade63b828101c1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 158.77069
+      value: 160.45
       objectReference: {fileID: 0}
     - target: {fileID: 4666838607541740131, guid: 47692ab19a8f76d45bade63b828101c1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.8891983
+      value: -6.77
       objectReference: {fileID: 0}
     - target: {fileID: 4666838607541740131, guid: 47692ab19a8f76d45bade63b828101c1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3825,14 +3864,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 95.188576
-      objectReference: {fileID: 0}
-    - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 12.181877
-      objectReference: {fileID: 0}
-    - target: {fileID: 7730420239699540986, guid: 1de9f73127191cd4d9835b8391354c2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 165.51018
       objectReference: {fileID: 0}
@@ -4213,10 +4244,6 @@ PrefabInstance:
     - target: {fileID: 3206479646970382631, guid: 11d6bc585edf94f4e928211f6aa34b87, type: 3}
       propertyPath: m_Name
       value: Jump (28x28)_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206479646970382631, guid: 11d6bc585edf94f4e928211f6aa34b87, type: 3}
-      propertyPath: m_TagString
-      value: Surface
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11d6bc585edf94f4e928211f6aa34b87, type: 3}
