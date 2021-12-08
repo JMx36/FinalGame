@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // added
 
 public class Player : MonoBehaviour
 {
@@ -15,8 +14,12 @@ public class Player : MonoBehaviour
     private float maxSpeed;
     [SerializeField] 
     private int initHealth;
+    [SerializeField]
+    private int spikeDamage;
 
     private int currentHealth;
+
+    
     
     private bool isJumping;
 
@@ -76,7 +79,6 @@ public class Player : MonoBehaviour
             alreadyOpened = false;
         }
 
-
         //Testing
 
         if (Mathf.Abs(rb2d.velocity.y) > 0)
@@ -85,7 +87,13 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            ApplyDamage(100);
+            InstaLifeKill();
+        }
+        if (currentHealth <= 0)
+        {
+            GameStateManager.m_Manager.LifeLost();
+            currentHealth = initHealth;
+            Debug.Log(currentHealth);
         }
     }
 
@@ -103,7 +111,7 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Surface")
+        if (collision.tag == "Surface")
         {
           // Debug.Log("Landing");
             isJumping = false;
@@ -111,6 +119,18 @@ public class Player : MonoBehaviour
             rb2d.velocity = new Vector2(currentXvelocity, 0);
             
             animator.SetBool ("IsJumping", isJumping);
+        }
+        if (collision.tag == "spike")
+        {
+            ApplyDamage(spikeDamage);
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Lethal Spike")
+        {
+            InstaLifeKill();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -126,12 +146,10 @@ public class Player : MonoBehaviour
     {
         currentHealth -= damage;
         Debug.Log(currentHealth);
-        if (currentHealth <= 0)
-        {
-          GameStateManager.m_Manager.LifeLost();
-          currentHealth = initHealth;
-          Debug.Log(currentHealth);
-        }
+    }
+    public void InstaLifeKill()
+    {
+        currentHealth -= currentHealth; 
     }
     public void AllowMovement(bool allow)
     {

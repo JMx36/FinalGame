@@ -11,6 +11,8 @@ TagManager:
   - A_Bullet
   - CuteEnemy
   - Edge
+  - spike
+  - Lethal Spike
   layers:
   - Default
   - TransparentFX
