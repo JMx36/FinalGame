@@ -62,7 +62,6 @@ public class SceneLoaderManager : MonoBehaviour
         StartCoroutine(LoadLevel(0, Scene.LevelThree.ToString()));
     }
 
-
     IEnumerator LoadLevel(int levelIndex, string scene) //animation 
     {
         transition.SetTrigger("End");

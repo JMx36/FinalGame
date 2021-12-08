@@ -53,6 +53,10 @@ public class AudioManager : MonoBehaviour
         {
             PlayAudio("Main Menu");
         }
+        if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.PlayerWon)
+        {
+            PlayAudio("Main Menu");
+        }
         if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel)
         {
             PlayAudio("First Level");
@@ -65,10 +69,7 @@ public class AudioManager : MonoBehaviour
         {
             PlayAudio("Third Level");
         }
-        if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.PlayerWon)
-        {
-            PlayAudio("Main Menu");
-        }
+       
     }
 
     public void PlayAudio(string musName)
