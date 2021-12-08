@@ -49,7 +49,7 @@ public class AudioManager : MonoBehaviour
     //It will play the audio based on GameState the player is in
     private void Start() 
     {
-        if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.Menu)
+        if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.Menu || GameStateManager.m_GameState == GameStateManager.GAMESTATE.PlayerLost)
         {
             PlayAudio("Main Menu");
         }
@@ -64,6 +64,10 @@ public class AudioManager : MonoBehaviour
         if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.ThirdLevel)
         {
             PlayAudio("Third Level");
+        }
+        if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.PlayerWon)
+        {
+            PlayAudio("Main Menu");
         }
     }
 

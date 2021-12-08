@@ -27,7 +27,6 @@ public class EnemyDetection : MonoBehaviour
 
     private bool moveLeft;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +83,6 @@ public class EnemyDetection : MonoBehaviour
     {
         rb.MovePosition(rb.position +  new Vector2(direction, 0) * enemyMovement * Time.fixedDeltaTime);
 
-        //transform.position = new Vector3(transform.position.x + (direction * enemyMovement * Time.deltaTime), transform.position.y, transform.position.z);
+//        transform.position = new Vector3(transform.position.x + (direction * enemyMovement * Time.deltaTime), transform.position.y, transform.position.z);
     }
 }

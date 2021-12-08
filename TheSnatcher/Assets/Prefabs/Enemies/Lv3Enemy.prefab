@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1684624873}
   - component: {fileID: 1684624871}
   - component: {fileID: 1684624870}
+  - component: {fileID: 1639612561}
   m_Layer: 0
   m_Name: Lv3Enemy
   m_TagString: Untagged
@@ -188,5 +189,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyDistance: 5
-  enemyMovement: 3
-  enemyAttackRange: 3
+  enemyMovement: 5
+  enemyAttackRange: 10
+--- !u!50 &1639612561
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9137052543568440536}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

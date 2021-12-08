@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 6636610574372992614}
   - component: {fileID: 4002962648930189037}
   - component: {fileID: 4328867522205317775}
-  - component: {fileID: 3810117550225803091}
   - component: {fileID: 1506656973}
   - component: {fileID: 1506656974}
   - component: {fileID: 1506656978}
+  - component: {fileID: 1408944841}
   m_Layer: 0
   m_Name: turret-1
   m_TagString: Untagged
@@ -113,21 +113,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.23}
   m_EdgeRadius: 0
---- !u!114 &3810117550225803091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7867110564514325068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6b458a3aaaf70747be9548ee04599e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyDistance: 5
-  enemyMovement: 0
-  enemyAttackRange: 3
 --- !u!95 &1506656973
 Animator:
   serializedVersion: 3
@@ -190,3 +175,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25286555, y: 0.23509805}
   m_EdgeRadius: 0
+--- !u!50 &1408944841
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7867110564514325068}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
