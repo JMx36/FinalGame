@@ -8,7 +8,7 @@ public class PortalScript : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (LeverManager.leverManager.leversComplete)
+        if (LeverManager.leverManager.leversComplete || GameStateManager.m_GameState == GameStateManager.GAMESTATE.SecondLevel)
         {
             if (collision.tag == "Player")
             {
