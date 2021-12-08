@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class MenuSettings : MonoBehaviour
+public class OptionSettings : MonoBehaviour
 {
     [SerializeField] private GameObject settings;
     [SerializeField] private AudioMixer audioMixer;
 
-    public static MenuSettings menuSettings;
+    public static OptionSettings optionSettings;
 
     public void Awake()
     {
-        menuSettings = this;
+        optionSettings = this;
     }
     public void Open()
     {
@@ -34,14 +34,16 @@ public class MenuSettings : MonoBehaviour
         audioMixer.SetFloat("MasterVolume", volLevel);
     }
     public void Save()
-    {
+    {        
         AudioManager.audioManager.PlayAudio("Option Button");
-        //  Debug.Log("Saving");
+        Debug.Log("Saving");
         GameStateManager.SaveGame();
     }
     public void Retry()
     {
         AudioManager.audioManager.PlayAudio("Option Button");
+        settings.SetActive(false);
+        GameStateManager.Pause();
         GameStateManager.Restart();
     }
     public void Quit()

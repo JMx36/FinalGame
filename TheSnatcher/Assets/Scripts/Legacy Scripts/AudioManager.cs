@@ -82,7 +82,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("Playing Audio of " + musName);
+        //Debug.Log("Playing Audio of " + musName);
 
         s.source.Play();
     }

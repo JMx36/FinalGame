@@ -70,12 +70,12 @@ public class Player : MonoBehaviour
         //If statements to open and close options
         if (Input.GetKeyDown(KeyCode.Escape) && !alreadyOpened)
         {
-            MenuSettings.menuSettings.Open();
+            OptionSettings.optionSettings.Open();
             alreadyOpened = true;
         }
         else if(Input.GetKeyDown(KeyCode.Escape) && alreadyOpened)
         {
-            MenuSettings.menuSettings.Close();
+            OptionSettings.optionSettings.Close();
             alreadyOpened = false;
         }
 
