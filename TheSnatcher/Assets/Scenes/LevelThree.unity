@@ -3620,7 +3620,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999760640414395210, guid: edc8d47c91a97764a91a8843502674be, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6999760640414395211, guid: edc8d47c91a97764a91a8843502674be, type: 3}
       propertyPath: m_Pivot.x
@@ -4039,6 +4039,18 @@ PrefabInstance:
       propertyPath: settings
       value: 
       objectReference: {fileID: 1893551082}
+    - target: {fileID: 4132107090404402220, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: maxSpeed
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132107090404402220, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: jumpForce
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4132107090404402220, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: movingSpeed
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5391483534211179019, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_SortingOrder
       value: 1

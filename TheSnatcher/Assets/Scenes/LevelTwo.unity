@@ -1569,38 +1569,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6999760639748894700, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -63.299988
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760639748894703, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760639927025176, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_Layer
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760639927025177, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 335.60004
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760639927025177, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -63.299988
-      objectReference: {fileID: 0}
     - target: {fileID: 6999760640414395210, guid: edc8d47c91a97764a91a8843502674be, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1663759101}
-    - target: {fileID: 6999760640414395210, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_RenderMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760640414395210, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_SortingOrder
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 6999760640414395211, guid: edc8d47c91a97764a91a8843502674be, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1688,18 +1660,6 @@ PrefabInstance:
     - target: {fileID: 6999760640414395215, guid: edc8d47c91a97764a91a8843502674be, type: 3}
       propertyPath: m_Name
       value: Lives TopLeft
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760640772178586, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 206.20001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760640772178586, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -63.299988
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999760640772178589, guid: edc8d47c91a97764a91a8843502674be, type: 3}
-      propertyPath: m_Layer
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edc8d47c91a97764a91a8843502674be, type: 3}

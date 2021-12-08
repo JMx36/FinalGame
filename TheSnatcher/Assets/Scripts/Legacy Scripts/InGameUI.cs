@@ -25,7 +25,8 @@ public class InGameUI : MonoBehaviour
             inGameUI.NewGame();
             GameStateManager.m_Manager.SetNewGameBool(false);
         }
-
+        else
+            Resume(GameStateManager.m_Manager.currentLives);
     }
     public void OnLoseLife()
     {
