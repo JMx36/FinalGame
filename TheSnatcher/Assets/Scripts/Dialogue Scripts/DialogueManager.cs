@@ -88,8 +88,9 @@ public class DialogueManager : MonoBehaviour
         }
         else if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.EndDialogue)
         {
-            Debug.Log("Loading thrid level from Dialogue Manager");
+            Debug.Log("Loading Win Screen from Dialogue Manager");
             GameStateManager.PlayerWins();
+            passed = true;
         }
         else if(!passed)
         {

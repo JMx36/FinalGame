@@ -99,14 +99,13 @@ public class GameStateManager : MonoBehaviour
         {
             MainMenu();
         }
-        if (Input.GetKeyDown(KeyCode.G)) //for GameState testing purposes 
-        {
-            Debug.Log(m_GameState.ToString());
-        }
-
         if (Input.anyKeyDown && m_GameState == GAMESTATE.PlayerWon)
         {
             MainMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log(m_GameState.ToString());
         }
     }
     /// <summary>
@@ -278,7 +277,20 @@ public class GameStateManager : MonoBehaviour
     }
     public static void Restart()
     {
-        Resume();
+        m_GameState = (GAMESTATE)PlayerPrefs.GetInt("State");
+        switch (m_GameState)
+        {
+            case GAMESTATE.FirstLevel:
+                FirstLevel();
+                break;
+            case GAMESTATE.SecondLevel:
+                SecondLevel();
+                break;
+            case GAMESTATE.ThirdLevel:
+                ThirdLevel();
+                break;
+        }
+        m_Manager.currentLives = m_Manager.startingLives;
     }
     public static void QuitGame()
     {
