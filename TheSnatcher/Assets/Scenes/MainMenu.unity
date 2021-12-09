@@ -440,7 +440,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -41}
+  m_AnchoredPosition: {x: 0, y: -481}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &233175727
@@ -547,7 +547,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 771754067}
         m_TargetAssemblyTypeName: TitleOptions, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadThirdLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -948,7 +948,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 771754067}
         m_TargetAssemblyTypeName: TitleOptions, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadSecondLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1091,7 +1091,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89a4cbadae125a04cb8814af2ae8e015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newOption: {fileID: 0}
+  newOption: {fileID: 1151853410}
+  buttonAnim: {fileID: 233175727}
 --- !u!1 &818597631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1505,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 771754067}
         m_TargetAssemblyTypeName: TitleOptions, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LoadFirtLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1750,7 +1751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1151853411
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1817,7 +1818,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 771754067}
         m_TargetAssemblyTypeName: TitleOptions, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: LevelButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
