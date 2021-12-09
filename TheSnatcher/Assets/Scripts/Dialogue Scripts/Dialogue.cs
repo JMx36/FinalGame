@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +7,6 @@ public class Dialogue
 {
     public string characterName;
 
-    [TextArea(3, 10)] //3 as minimum and  10 as maximum amount of text groups allowed
+    [TextArea(3, 10)] //The bounds of the text box
     public List<string> sentences = new List<string>(); 
 }

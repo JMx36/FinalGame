@@ -3,6 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class Sounds
 {
+    //info for the sound
     public string name;
 
     public AudioClip clip;

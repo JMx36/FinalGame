@@ -97,10 +97,6 @@ public class ObjectMover : MonoBehaviour
         StartCoroutine(MovePlatform());
     }
 
-    /// <summary>
-    ///  Coroutines for object movements 
-    /// </summary>
-
     //This method moves the Platform back and forth based on the target and start position of the object 
     private IEnumerator MovePlatform()
     {

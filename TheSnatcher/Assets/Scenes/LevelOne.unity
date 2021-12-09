@@ -6969,7 +6969,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1716309894567535224, guid: 6c4d2f3f5838e8443b2f1a7f8e6ec074, type: 3}
       propertyPath: transitionTime
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4288340573804339362, guid: 6c4d2f3f5838e8443b2f1a7f8e6ec074, type: 3}
       propertyPath: m_RootOrder

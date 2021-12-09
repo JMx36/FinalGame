@@ -6,8 +6,10 @@ using UnityEngine.SceneManagement;
 public class SceneLoaderManager : MonoBehaviour
 {
     public Animator transition;
-    public float transitionTime = 1f;
+    [SerializeField]
+    private float transitionTime;
     public static SceneLoaderManager m_SceneManager;
+    //enums of the scene names
     public enum Scene
     {
         MainMenu,
@@ -21,6 +23,9 @@ public class SceneLoaderManager : MonoBehaviour
     {
         m_SceneManager = this;
     }
+    /// <summary>
+    /// Methods called by GameStateManager to load scenes
+    /// </summary>
     public void LoadMainMenu()
     {
         StartCoroutine(LoadLevel(0, Scene.MainMenu.ToString()));
@@ -60,6 +65,7 @@ public class SceneLoaderManager : MonoBehaviour
         StartCoroutine(LoadLevel(0, Scene.LevelThree.ToString()));
     }
 
+    //Coroutine that delays the scene loading until transition is done
     IEnumerator LoadLevel(int levelIndex, string scene) //animation 
     {
         transition.SetTrigger("End");

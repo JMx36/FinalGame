@@ -1,12 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+//Josh Castillo
 
 public class Shooting : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField]
     public Transform firePoint;
-    public GameObject player;
+    [SerializeField]
     public GameObject bullet;
 
     // Update is called once per frame
@@ -24,7 +23,7 @@ public class Shooting : MonoBehaviour
     {
         Instantiate(bullet, firePoint.position, firePoint.rotation);
     }
-
+    //gets the mouse postion and direction relative to the player
     public void getMousePosition()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

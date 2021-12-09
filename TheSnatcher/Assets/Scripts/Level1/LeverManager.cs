@@ -1,14 +1,18 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//Josh Castillo
 
 public class LeverManager : MonoBehaviour
 {
-    public GameObject portalOn;
-    public GameObject portalOff;
+    [SerializeField]
+    private GameObject portalOn;
+    [SerializeField]
+    private GameObject portalOff;
     public bool leversComplete { get; private set; }
 
     private Lever[] levers;
+
+    [HideInInspector]
     public List<Sprite> sprites = new List<Sprite> { };
    
     public static LeverManager leverManager;
@@ -23,6 +27,7 @@ public class LeverManager : MonoBehaviour
     public void CheckLevers()
     {
         leversComplete = true;
+        //chekcs if all the levers have been complete
         foreach (Lever lever in levers)
         {
             if (!lever.isOpened) leversComplete = false;

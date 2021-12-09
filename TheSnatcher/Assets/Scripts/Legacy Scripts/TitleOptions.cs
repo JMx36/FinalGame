@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 //Josh Castillo
 
@@ -68,7 +66,6 @@ public class TitleOptions : MonoBehaviour
             titleOptions.opened = false;
         }
     }
-
     public void LoadFirtLevel()
     {
         GameStateManager.FirstLevel();

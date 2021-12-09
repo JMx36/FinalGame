@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+//Josh Castillo
 
 public class OptionSettings : MonoBehaviour
 {
     [SerializeField] private GameObject settings;
     [SerializeField] private AudioMixer audioMixer;
+
+    private bool paused;
 
     public static OptionSettings optionSettings;
 
@@ -16,14 +17,14 @@ public class OptionSettings : MonoBehaviour
     }
     public void Open()
     {
-        GameStateManager.Pause();
+        optionSettings.Pause();
         AudioManager.audioManager.PlayAudio("Option Button");
         Player.player.AllowMovement(false);
         settings.SetActive(true);
     }
     public void Close()
     {
-        GameStateManager.Pause();
+        optionSettings.Pause();
         AudioManager.audioManager.PlayAudio("Option Button");
         Player.player.AllowMovement(true);
         settings.SetActive(false);
@@ -43,7 +44,7 @@ public class OptionSettings : MonoBehaviour
     {
         AudioManager.audioManager.PlayAudio("Option Button");
         settings.SetActive(false);
-        GameStateManager.Pause();
+        optionSettings.Pause();
         GameStateManager.Restart();
     }
     public void Quit()
@@ -51,5 +52,21 @@ public class OptionSettings : MonoBehaviour
         AudioManager.audioManager.PlayAudio("Option Button");
         //  Debug.Log("Quitting");
         GameStateManager.QuitGame();
+    }
+   
+    public void Pause()
+    {
+        if (!optionSettings.paused)
+        {
+            Debug.Log("pausing");
+            Time.timeScale = 0;
+            optionSettings.paused = true;
+        }
+        else
+        {
+            Debug.Log("unpausing");
+            Time.timeScale = 1;
+            optionSettings.paused = false;
+        }
     }
 }

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+//Josh Castillo
 
 [CreateAssetMenu(fileName = "New CuteEnemy", menuName = "CuteEnemy")]
 public class CuteEnemyObject : ScriptableObject

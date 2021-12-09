@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //Josh Castillo
@@ -28,6 +26,8 @@ public class InGameUI : MonoBehaviour
             }             
         }
     }
+
+    //Displays the amount of lives at the beginning of each level
     public void Resume(int numberOfLives) 
     {
         numberOfLives--; //substracting by 1 to fit with the array index

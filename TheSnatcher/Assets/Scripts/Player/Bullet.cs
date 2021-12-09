@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //velocity is given to the bullet as it spawns
         bullet.velocity = transform.right * speed;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }

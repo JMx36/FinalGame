@@ -4356,6 +4356,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5391483534565572268, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5391483536058317810, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_Name
       value: Natalie

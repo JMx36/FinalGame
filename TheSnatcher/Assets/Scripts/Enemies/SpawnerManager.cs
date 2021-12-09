@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class SpawnerManager : MonoBehaviour
 {
-    public List<GameObject> enemies = new List<GameObject> { };
+    [SerializeField]    
+    private List<GameObject> enemies = new List<GameObject> { }; //List of the bear enemies
     [SerializeField] private float delayTime;
     [SerializeField] private float startTime;
 
-    //stops the spawner from initation again
+    //stops the spawner from initiating again
     private bool pass = true;
-    // Start is called before the first frame update
-    void Awake()
-    {
-       
-    }
     private void Update()
     {
         if (Player.player.GetMovement() && pass)
@@ -26,6 +22,7 @@ public class SpawnerManager : MonoBehaviour
     }
     public void SpawnEnemies()
     {
+        //there is a random chance of spawning a type of bear. Brow are the most common, green medium, and red rare
         int random = Random.Range(0, 10);
         if (random == 0) Instantiate(enemies[random], transform);
         if (random > 1 &&  random <= 4) Instantiate(enemies[1], transform);

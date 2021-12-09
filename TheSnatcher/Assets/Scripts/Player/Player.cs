@@ -3,13 +3,16 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    public Animator animator;
+
+    [SerializeField]
+    private Animator animator;
+
     private SpriteRenderer sprite;
 
     [SerializeField] 
     private float movingSpeed;
     [SerializeField] 
-     private float jumpForce;
+    private float jumpForce;
     [SerializeField] 
     private float maxSpeed;
     [SerializeField] 

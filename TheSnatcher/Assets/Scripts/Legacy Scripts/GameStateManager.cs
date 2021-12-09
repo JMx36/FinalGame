@@ -1,23 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+//Josh Castillo
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager m_Manager;
-    // Player's lives
+    // Player's starting lives
     [SerializeField]
     private int startingLives;
     public int currentLives { get; private set; }
 
-    //bool for pausing game while in Options
-    private bool paused;
-
     //Varaibles meant for testing purposes
-    public int TestingLevel; 
-    public bool testing;
+    [SerializeField]
+    private int TestingLevel; 
+    [SerializeField]
+    private bool testing;
 
-    //Bools to change InGameUI (lives) to either a resume or newGame state at the beginning of each level
+    //Bool for testing purposes
     public bool resume { get; private set; }
 
     //Game states
@@ -50,11 +47,7 @@ public class GameStateManager : MonoBehaviour
 
         m_GameState = GAMESTATE.Menu; //Default GameState
 
-        if (!m_Manager.resume)
-        {
-            m_Manager.currentLives = m_Manager.startingLives; //Assigning lives }
-            m_Manager.resume = false;
-        }
+        m_Manager.currentLives = m_Manager.startingLives; //Assigning lives 
 
         //overrides the default GAMESTATE mode
         if (TestingLevel > 0 && TestingLevel <= 3 && testing)
@@ -67,12 +60,8 @@ public class GameStateManager : MonoBehaviour
                 m_Manager.resume = false;
             }       
 
-            Debug.Log("Initial state: " + m_GameState.ToString());
-            Debug.Log("Live " + m_Manager.currentLives);
-           // Debug.Log(m_Manager.currentLives);
+            Debug.Log("Initial state: " + m_GameState.ToString() + ".Lives " + m_Manager.currentLives);
         }
-
-        paused = false;
 
         if (PlayerPrefs.GetInt("Won") == (int)GAMESTATE.PlayerWon && m_GameState == GAMESTATE.Menu)
         {
@@ -121,12 +110,12 @@ public class GameStateManager : MonoBehaviour
         if(m_GameState == GAMESTATE.Menu)
         {
             m_GameState = GAMESTATE.StartDialogue;
-            Debug.Log("DialogueScene GameState is " + m_GameState);
+          //  Debug.Log("DialogueScene GameState is " + m_GameState);
         }
         else if(m_GameState == GAMESTATE.ThirdLevel)
         {
             m_GameState = GAMESTATE.EndDialogue;
-            Debug.Log("DialogueScene GameState is " + m_GameState);
+          //  Debug.Log("DialogueScene GameState is " + m_GameState);
         }
 
         SceneLoaderManager.m_SceneManager.LoadScene(); 
@@ -136,24 +125,21 @@ public class GameStateManager : MonoBehaviour
     {
         m_GameState = GAMESTATE.FirstLevel;
         SceneLoaderManager.m_SceneManager.FirstLevel();
-        PlayerPrefs.SetInt("State", (int)m_GameState);
-        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
+        SaveGame();
     }         
 
     public static void SecondLevel()
     {
         m_GameState = GAMESTATE.SecondLevel;
         SceneLoaderManager.m_SceneManager.SecondLevel();
-        PlayerPrefs.SetInt("State", (int)m_GameState);
-        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);       
+        SaveGame();
     }
 
     public static void ThirdLevel()
     {
         m_GameState = GAMESTATE.ThirdLevel;
         SceneLoaderManager.m_SceneManager.ThirdLevel();
-        PlayerPrefs.SetInt("State", (int)m_GameState);
-        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
+        SaveGame();
     }
 
     public static void PlayerWins()
@@ -173,21 +159,6 @@ public class GameStateManager : MonoBehaviour
     /// Interactions with UI and lives 
     /// </summary>
     
-    public static void Pause()
-    {
-        if (!m_Manager.paused)
-        {
-            Debug.Log("pausing");
-            Time.timeScale = 0;
-            m_Manager.paused = true;
-        }
-        else 
-        {
-            Debug.Log("unpausing");
-            Time.timeScale = 1;
-            m_Manager.paused = false;
-        }
-    }
     public void LifeLost()
     {
         AudioManager.audioManager.PlayAudio("Lost Life");
