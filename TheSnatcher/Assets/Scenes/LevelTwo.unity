@@ -1395,7 +1395,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
       propertyPath: dialogue.sentences.Array.size
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
       propertyPath: dialogue.sentences.Array.data[0]
@@ -1411,7 +1411,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
       propertyPath: dialogue.sentences.Array.data[3]
-      value: Why do I hear boss music... (oh no)
+      value: Are those bears running towards me?...They don't look too happy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5491756373740456694, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: dialogue.sentences.Array.data[4]
+      value: ' Why do I hear boss music...(oh no)'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8329838725663143755, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d8d29357d0a49444b46da6f47af393d, type: 3}
