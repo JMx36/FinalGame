@@ -44,16 +44,23 @@ public class GameStateManager : MonoBehaviour
             m_Manager = this;
             DontDestroyOnLoad(m_Manager);
         }
-        else Destroy(this);
+        else
+        {
+            Destroy(this);
+        }
 
         m_GameState = GAMESTATE.Menu; //Default GameState
 
-        m_Manager.currentLives = m_Manager.startingLives; //Assigning lives 
+        if (!m_Manager.resume)
+        {
+            m_Manager.currentLives = m_Manager.startingLives; //Assigning lives }
+            m_Manager.resume = false;
+        }
 
         if (PlayerPrefs.GetInt("Won") == (int)GAMESTATE.PlayerWon)
         { 
             Debug.Log("Player has won. Unlocking new option");
-        }
+            TitleOptions.titleOptions.NewOption();        }
         else
         {
             Debug.Log("Player didnt win, so new button will not appeared. GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
@@ -65,10 +72,16 @@ public class GameStateManager : MonoBehaviour
         if (TestingLevel > 0 && TestingLevel <= 3 && testing)
         {
             Debug.Log("Testing Level " + TestingLevel);
-            m_GameState = (GAMESTATE)TestingLevel;           
-            m_Manager.currentLives = m_Manager.startingLives;
+            m_GameState = (GAMESTATE)TestingLevel;
+            if (!m_Manager.resume)
+            {
+                m_Manager.currentLives = m_Manager.startingLives;
+                m_Manager.resume = false;
+            }
+         
 
             Debug.Log("Initial state: " + m_GameState.ToString());
+            Debug.Log("Live " + m_Manager.currentLives);
            // Debug.Log(m_Manager.currentLives);
         }
 
@@ -233,8 +246,9 @@ public class GameStateManager : MonoBehaviour
         if (PlayerPrefs.GetInt("State") >= 1 && PlayerPrefs.GetInt("State") <= 3)
         {
             m_GameState = (GAMESTATE)PlayerPrefs.GetInt("State");
-           // Debug.Log("Player is in state " + m_GameState.ToString());
+            Debug.Log("Player is in state " + m_GameState.ToString());
             m_Manager.resume = true;
+            Debug.Log(m_Manager.resume);
 
             switch (m_GameState)
             {
@@ -249,7 +263,8 @@ public class GameStateManager : MonoBehaviour
                     break;
             }
 
-            m_Manager.currentLives = PlayerPrefs.GetInt("Lives");            
+            m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
+            Debug.Log(m_Manager.currentLives);
         }
         else
             Debug.Log("There is no saving data to resume: Error when resume button clicked");

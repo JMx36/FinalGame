@@ -13,20 +13,20 @@ public class InGameUI : MonoBehaviour
     {
         inGameUI = this;
         // Debug.Log("InGameUI starting");
-        if (GameStateManager.m_Manager.resume)
-        {
-            Debug.Log("Resuming lives");
-            inGameUI.Resume(GameStateManager.m_Manager.currentLives);
-            GameStateManager.m_Manager.SetResumeBool(false);
-        }
-        else if (GameStateManager.m_Manager.newGame)
-        {
-            Debug.Log("Reseting Lives for New Game");
-            inGameUI.NewGame();
-            GameStateManager.m_Manager.SetNewGameBool(false);
-        }
-        else
-            inGameUI.Resume(GameStateManager.m_Manager.currentLives);
+/*          if (GameStateManager.m_Manager.resume)
+          {
+              Debug.Log("Resuming lives");
+              inGameUI.Resume(GameStateManager.m_Manager.currentLives);
+              GameStateManager.m_Manager.SetResumeBool(false);
+          }
+          else if (GameStateManager.m_Manager.newGame)
+          {
+              Debug.Log("Reseting Lives for New Game");
+              inGameUI.NewGame();
+              GameStateManager.m_Manager.SetNewGameBool(false);
+          }
+          else*/
+        inGameUI.Resume(GameStateManager.m_Manager.currentLives);
     }
     public void OnLoseLife()
     {
@@ -41,7 +41,7 @@ public class InGameUI : MonoBehaviour
             }             
         }
     }
-    public void Resume(int numberOfLives) //I have to test this
+    public void Resume(int numberOfLives) 
     {
         numberOfLives--; //substracting by 1 to fit with the array index
         for(int i = lives.Length - 1; i > numberOfLives; i--)
