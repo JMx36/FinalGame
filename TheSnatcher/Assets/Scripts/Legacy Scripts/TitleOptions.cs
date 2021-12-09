@@ -38,7 +38,7 @@ public class TitleOptions : MonoBehaviour
     public void Retry()
     {
         AudioManager.audioManager.PlayAudio("Button Sound");
-        GameStateManager.Resume();
+        GameStateManager.Restart();
     }
 
     public void ReturnToMenu()

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+//Josh Castillo
 
 public class EnemyBullet : MonoBehaviour
 {
