@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Emily Chavez
 public class Lever : MonoBehaviour
 {
     public bool isOpened { get;  private set;} 

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Emily Chavez
 public class Crab : MonoBehaviour
 {
     [SerializeField]
@@ -37,8 +37,9 @@ public class Crab : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     
+    
     public void Update()
-    {
+    { // To stop the crab from shooting randomly 
         distance = Vector2.Distance(transform.position, player.position);
       
         if (timeToShoot < 0 && distance < noticed)
@@ -56,7 +57,8 @@ public class Crab : MonoBehaviour
         if (currentHealth <= 0)
             Destroy(gameObject);
     }
-    public void OnTriggerEnter2D(Collider2D collision)
+    //damage to crab after getting hit by a bullet
+    public void OnTriggerEnter2D(Collider2D collision) 
     {
         if (collision.gameObject.tag == "P_Bullet")
         {
