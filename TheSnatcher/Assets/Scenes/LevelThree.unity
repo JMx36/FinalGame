@@ -4091,6 +4091,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5391483536058317813, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
+      propertyPath: m_LinearDrag
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5391483536058317814, guid: 0ea9bd928339f8e45a379f37e1b7de8c, type: 3}
       propertyPath: m_SortingOrder
       value: 3
