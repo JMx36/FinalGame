@@ -13,13 +13,13 @@ public class PortalScript : MonoBehaviour
         {
             if(LeverManager.leverManager == null && GameStateManager.m_GameState == GameStateManager.GAMESTATE.SecondLevel)
             {
-                Debug.Log("Loading third level");
+              //  Debug.Log("Loading third level");
                 GameStateManager.ThirdLevel();
                 collision.gameObject.SetActive(false);
             }
             else if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel && LeverManager.leverManager.leversComplete)
             {
-                Debug.Log("Loading Second level");
+               // Debug.Log("Loading Second level");
                     GameStateManager.SecondLevel();
                 collision.gameObject.SetActive(false);
             }

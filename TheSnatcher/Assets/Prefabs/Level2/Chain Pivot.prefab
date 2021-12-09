@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1857173816337037611}
   - component: {fileID: 1857173816337037613}
   - component: {fileID: 1857173816337037612}
+  - component: {fileID: 4471150221794493182}
   m_Layer: 0
   m_Name: Spiked Ball
   m_TagString: spike
@@ -121,6 +122,26 @@ CircleCollider2D:
   m_Offset: {x: 0.008672422, y: -0.0017434342}
   serializedVersion: 2
   m_Radius: 0.08980909
+--- !u!114 &4471150221794493182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857173816337037608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0ef0ff688e40814294b4abf085230c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0
+  moveUnits: 0
+  moveSideWays: 0
+  playerOn: 0
+  drop: 0
+  notMove: 1
+  spike: 1
+  spikeDamage: 15
 --- !u!1 &1857173816407981524
 GameObject:
   m_ObjectHideFlags: 0

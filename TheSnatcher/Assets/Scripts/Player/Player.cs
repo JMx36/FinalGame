@@ -17,9 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int spikeDamage;
 
-    private int currentHealth;
-
-    
+    private int currentHealth;    
     
     private bool isJumping;
 
@@ -116,21 +114,8 @@ public class Player : MonoBehaviour
           // Debug.Log("Landing");
             isJumping = false;
           //this is to keep the velocity of the character constant after landing
-            rb2d.velocity = new Vector2(currentXvelocity, 0);
-            
+            rb2d.velocity = new Vector2(currentXvelocity, 0);            
             animator.SetBool ("IsJumping", isJumping);
-        }
-        if (collision.tag == "spike")
-        {
-            ApplyDamage(spikeDamage);
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Lethal Spike")
-        {
-            InstaLifeKill();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

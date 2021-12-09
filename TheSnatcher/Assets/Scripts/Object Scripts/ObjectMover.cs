@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class ObjectMover : MonoBehaviour
 {
     //floats to determine how far and for how long the object will move
     [SerializeField] private float duration;
     [SerializeField] private float moveUnits;
+
     //bools for determining the action of the gameObject
     [SerializeField] private bool moveSideWays;
     [SerializeField] private bool playerOn;
     [SerializeField] private bool drop;
     [SerializeField] private bool notMove;
+
+    
+    [SerializeField] private bool spike;  
+    [SerializeField] private int spikeDamage;
 
     //Rigidbody of the gameobject
     private Rigidbody2D rb;
@@ -42,6 +47,7 @@ public class MovingPlatform : MonoBehaviour
             targetPos = new Vector3(x, transform.position.y, transform.position.z);
             startPosition = transform.position;
         }
+
         //Do you want the player to stand on the platform before moving or do you want the platform to move?
         //if not, then platform will move from the beginning  
         if (!playerOn && !notMove) 
@@ -67,7 +73,7 @@ public class MovingPlatform : MonoBehaviour
         }
         targetPos = startPosition;
         startPosition = transform.position;
-        StartCoroutine(MovePlatform()); //to move platform back 
+        StartCoroutine(MovePlatform()); 
     }
    
     //This method moves the object back to its original spot (only meant for y axis movement) 
@@ -81,18 +87,16 @@ public class MovingPlatform : MonoBehaviour
             yield return null;
         }
     }
-    //Method call to drop the gameobject by changing its kinematic value
-
-    private void DropObject()
-    {
-        StopAllCoroutines(); //stops the Coroutine MoveBack to not get Jerky movement
-        rb.isKinematic = false;     
-    }
+  
     //Method for detecting if player has entered the trigger collider of the gameobject and act accordingly 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "Player")
         {
+            if (spike)
+            {
+                Player.player.ApplyDamage(spikeDamage);
+            }
             if (!drop && playerOn)
             {
                 PlatformTrigger();
@@ -104,13 +108,24 @@ public class MovingPlatform : MonoBehaviour
             }             
         }
     }
-    //Once it collides with the ground the gameobejct will move backt to its original spot 
+    //Once it collides with the ground the gameobject will move back to its original spot 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Surface" || (drop && collision.gameObject.tag == "Player"))
         {
+            Player.player.InstaLifeKill();
             rb.isKinematic = true;
             StartCoroutine(MoveBack());
         }
+       /* else if(collision.gameObject.tag == "Player" && spike)
+        {
+            
+        }*/
+    }
+    //Method call to drop the gameobject by changing its kinematic value
+    private void DropObject()
+    {
+        StopAllCoroutines(); //stops the Coroutine MoveBack to not get Jerky movement
+        rb.isKinematic = false;
     }
 }
