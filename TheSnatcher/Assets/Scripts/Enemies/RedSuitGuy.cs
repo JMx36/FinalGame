@@ -18,7 +18,9 @@ public class RedSuitGuy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    private void Update() // to purposely have the player be close enough to do damage to RedSuitGuy
+    private void Update() 
+    {
+        // to purposely have the player be close enough to do damage to RedSuitGuy
         if (Vector2.Distance(player.position, transform.position) < distance)
         {
             close = true;
