@@ -145,9 +145,10 @@ public class GameStateManager : MonoBehaviour
     public static void SecondLevel()
     {
         m_GameState = GAMESTATE.SecondLevel;
-        SceneLoaderManager.m_SceneManager.SecondLevel();
+        Debug.Log(m_GameState);
         PlayerPrefs.SetInt("State", (int)m_GameState);
         PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
+        SceneLoaderManager.m_SceneManager.SecondLevel();
     }
 
     public static void ThirdLevel()

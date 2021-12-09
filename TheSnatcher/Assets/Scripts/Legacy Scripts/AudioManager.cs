@@ -49,6 +49,7 @@ public class AudioManager : MonoBehaviour
     //It will play the audio based on GameState the player is in
     private void Start() 
     {
+       // Debug.Log(GameStateManager.m_GameState.ToString());
         if(GameStateManager.m_GameState == GameStateManager.GAMESTATE.Menu || GameStateManager.m_GameState == GameStateManager.GAMESTATE.PlayerLost)
         {
             PlayAudio("Main Menu");
