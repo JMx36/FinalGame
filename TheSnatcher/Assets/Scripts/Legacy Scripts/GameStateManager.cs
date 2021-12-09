@@ -57,17 +57,6 @@ public class GameStateManager : MonoBehaviour
             m_Manager.resume = false;
         }
 
-        if (PlayerPrefs.GetInt("Won") == (int)GAMESTATE.PlayerWon)
-        { 
-            Debug.Log("Player has won. Unlocking new option");
-            TitleOptions.titleOptions.NewOption();        }
-        else
-        {
-            Debug.Log("Player didnt win, so new button will not appeared. GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
-        }
-
-        Debug.Log("GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
-
         //overrides the default GAMESTATE mode
         if (TestingLevel > 0 && TestingLevel <= 3 && testing)
         {
@@ -87,6 +76,17 @@ public class GameStateManager : MonoBehaviour
 
         paused = false;
 
+        if (PlayerPrefs.GetInt("Won") == (int)GAMESTATE.PlayerWon && m_GameState == GAMESTATE.Menu)
+        {
+            Debug.Log("Player has won. Unlocking new option");
+            TitleOptions.titleOptions.NewOption();
+        }
+        else
+        {
+            Debug.Log("Player didnt win, so new button will not appeared. GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
+        }
+
+        Debug.Log("GameState: " + m_GameState.ToString() + ". Lives " + m_Manager.currentLives);
     }
 
     private void Update()

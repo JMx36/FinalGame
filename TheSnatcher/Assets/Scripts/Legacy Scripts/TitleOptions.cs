@@ -7,10 +7,17 @@ public class TitleOptions : MonoBehaviour
     [SerializeField]
     private GameObject newOption;
 
+    [SerializeField]
+    private Animator buttonAnim;
+
+    private bool opened;
+
     public static TitleOptions titleOptions;
-    public void Start()
+    public void Awake()
     {
         titleOptions = this;
+
+        opened = false;
     }
     public void NewGame()
     {
@@ -43,6 +50,22 @@ public class TitleOptions : MonoBehaviour
     public void NewOption()
     {
         newOption.SetActive(true);
+    }
+
+    public void LevelButtonClicked()
+    {
+        if (!titleOptions.opened)
+        {
+           // Debug.Log("Appearing");
+            buttonAnim.SetTrigger("Appear");
+            titleOptions.opened = true;
+        }
+        else
+        {
+            //Debug.Log("Disappeaering");
+            buttonAnim.SetTrigger("Appear");
+            titleOptions.opened = false;
+        }
     }
 
     public void LoadFirtLevel()
