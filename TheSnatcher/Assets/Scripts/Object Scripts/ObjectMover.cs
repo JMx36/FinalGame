@@ -77,7 +77,12 @@ public class ObjectMover : MonoBehaviour
     //Once it collides with the ground the gameobject will move back to its original spot 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Surface" || (drop && collision.gameObject.tag == "Player"))
+        if(collision.gameObject.tag == "Surface")
+        {
+            rb.isKinematic = true;
+            StartCoroutine(MoveBack());
+        }
+        else if((drop && collision.gameObject.tag == "Player"))
         {
             Player.player.InstaLifeKill();
             rb.isKinematic = true;

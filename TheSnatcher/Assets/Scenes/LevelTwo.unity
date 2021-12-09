@@ -396,7 +396,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Size.x
-      value: 0.33924222
+      value: 0.26785585
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Size.y
@@ -404,11 +404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Offset.x
-      value: 0.008987695
+      value: 0.0029582828
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0023171827
+      value: -0.0023171902
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6859582147911491793, guid: 29fed52b068bce34c886240817f8c297, type: 3}
@@ -2045,7 +2045,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &630677354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3028,6 +3028,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -15.15
       objectReference: {fileID: 0}
+    - target: {fileID: 4471150221794493182, guid: fed59a0bb69963447bd92c774a0407ae, type: 3}
+      propertyPath: spikeDamage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed59a0bb69963447bd92c774a0407ae, type: 3}
 --- !u!1001 &1157140140
@@ -3665,7 +3669,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Size.x
-      value: 0.33924222
+      value: 0.26785582
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Size.y
@@ -3673,11 +3677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Offset.x
-      value: 0.008987695
+      value: 0.0059487894
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0023171827
+      value: -0.0023171902
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_IsTrigger
@@ -4633,6 +4637,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: de835b05247c3ec41bd191603cdb1862, type: 2}
+    - target: {fileID: 4471150221794493182, guid: fed59a0bb69963447bd92c774a0407ae, type: 3}
+      propertyPath: spikeDamage
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fed59a0bb69963447bd92c774a0407ae, type: 3}
 --- !u!1 &1894200863
@@ -5182,7 +5190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Size.x
-      value: 0.33924222
+      value: 0.27383617
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Size.y
@@ -5190,11 +5198,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Offset.x
-      value: 0.008987695
+      value: 0.0059484094
       objectReference: {fileID: 0}
     - target: {fileID: 6859582147911491794, guid: 29fed52b068bce34c886240817f8c297, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0023171827
+      value: -0.0023171902
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6859582147911491793, guid: 29fed52b068bce34c886240817f8c297, type: 3}
