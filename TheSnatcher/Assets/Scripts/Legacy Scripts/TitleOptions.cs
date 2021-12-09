@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class TitleOptions : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject newOption;
+
+    public static TitleOptions titleOptions;
+    public void Start()
+    {
+        titleOptions = this;
+    }
     public void NewGame()
     {
         AudioManager.audioManager.PlayAudio("Button Sound");
@@ -31,5 +39,22 @@ public class TitleOptions : MonoBehaviour
     {
         AudioManager.audioManager.PlayAudio("Button Sound");
         GameStateManager.MainMenu();
+    }
+    public void NewOption()
+    {
+        newOption.SetActive(true);
+    }
+
+    public void LoadFirtLevel()
+    {
+        GameStateManager.FirstLevel();
+    }
+    public void LoadSecondLevel()
+    {
+        GameStateManager.SecondLevel();
+    }
+    public void LoadThirdLevel()
+    {
+        GameStateManager.ThirdLevel();
     }
 }
