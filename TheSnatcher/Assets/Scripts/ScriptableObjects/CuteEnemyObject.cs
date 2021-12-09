@@ -12,4 +12,5 @@ public class CuteEnemyObject : ScriptableObject
     public int health;
     public int damage;
     public float maxSpeed;
+    public float unSpawnDistance;
 }

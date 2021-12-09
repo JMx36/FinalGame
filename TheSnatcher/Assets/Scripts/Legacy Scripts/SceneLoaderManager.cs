@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+//Josh Castillo
 
 public class SceneLoaderManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    // Start is called before the first frame update
     public Animator transition;
     public float transitionTime = 1f;
     public static SceneLoaderManager m_SceneManager;

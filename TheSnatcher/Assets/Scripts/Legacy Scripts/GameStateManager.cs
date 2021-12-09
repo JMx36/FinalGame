@@ -13,13 +13,12 @@ public class GameStateManager : MonoBehaviour
     //bool for pausing game while in Options
     private bool paused;
 
-    // Varaibles meant for testing purposes
+    //Varaibles meant for testing purposes
     public int TestingLevel; 
     public bool testing;
 
     //Bools to change InGameUI (lives) to either a resume or newGame state at the beginning of each level
     public bool resume { get; private set; }
-    public bool newGame { get; private set; }
 
     //Game states
     public enum GAMESTATE
@@ -66,8 +65,7 @@ public class GameStateManager : MonoBehaviour
             {
                 m_Manager.currentLives = m_Manager.startingLives;
                 m_Manager.resume = false;
-            }
-         
+            }       
 
             Debug.Log("Initial state: " + m_GameState.ToString());
             Debug.Log("Live " + m_Manager.currentLives);
@@ -108,6 +106,7 @@ public class GameStateManager : MonoBehaviour
             Debug.Log(m_GameState.ToString());
         }
     }
+
     /// <summary>
     /// Game States of the player. Useful to know on what level the player was before quitting game (only applicable if the player saves). 
     /// </summary>
@@ -174,7 +173,7 @@ public class GameStateManager : MonoBehaviour
     /// Interactions with UI and lives 
     /// </summary>
     
-    public static void Pause() //still have to fix this
+    public static void Pause()
     {
         if (!m_Manager.paused)
         {
@@ -207,43 +206,26 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    public void SetResumeBool(bool value)
-    {
-        m_Manager.resume = value;
-    }
-    public void SetNewGameBool(bool value)
-    {
-        m_Manager.newGame = value;
-    }
-
     /// <summary>
     /// Player progression, Restarts and Quitting
     /// </summary>
      
-    //Resest Playerfebs and starts a new game
+    //Loads the Game from the Beginning
     public static void NewGame()
     {
-      //Resets values to default ones
-        m_Manager.newGame = true;
-
-        m_GameState = GAMESTATE.Menu;
-
         m_Manager.currentLives = m_Manager.startingLives;
 
         DialogueScene();       
-        
-        //Resets PlayerPrefs Lives and State to default values of Menu and 3 lives respectively 
-        PlayerPrefs.SetInt("State", (int)m_GameState); 
-        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
 
         Debug.Log(" NewGame Log: Lives " + m_Manager.currentLives + ". Player state is " + m_GameState.ToString());
     }
 
-    public static void SaveGame() //saves the lives and level of the player when run
+    public static void SaveGame() //saves the lives and level of the player when called
     {
         PlayerPrefs.SetInt("State", (int)m_GameState);
         PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
     }
+
     //Resumes to the last level of the player and assigns the corresponding lives if saved. Also works as a restart method. 
     public static void Resume()
     {
@@ -251,32 +233,32 @@ public class GameStateManager : MonoBehaviour
         if (PlayerPrefs.GetInt("State") >= 1 && PlayerPrefs.GetInt("State") <= 3)
         {
             m_GameState = (GAMESTATE)PlayerPrefs.GetInt("State");
-            Debug.Log("Player is in state " + m_GameState.ToString());
-            m_Manager.resume = true;
-            Debug.Log(m_Manager.resume);
-
-            switch (m_GameState)
-            {
-                case GAMESTATE.FirstLevel:
-                    FirstLevel();
-                    break;
-                case GAMESTATE.SecondLevel:
-                    SecondLevel();
-                    break;
-                case GAMESTATE.ThirdLevel:
-                    ThirdLevel();
-                    break;
-            }
 
             m_Manager.currentLives = PlayerPrefs.GetInt("Lives");
-            Debug.Log(m_Manager.currentLives);
+
+            m_Manager.resume = true;
+
+            LoadByState();
+
+            Debug.Log("Player is in state " + m_GameState.ToString() + ". Lives = " + m_Manager.currentLives);
         }
         else
             Debug.Log("There is no saving data to resume: Error when resume button clicked");
     }
+
+    //Restarts the level where the player was last on and the lives
     public static void Restart()
     {
         m_GameState = (GAMESTATE)PlayerPrefs.GetInt("State");
+
+        LoadByState();
+
+        m_Manager.currentLives = m_Manager.startingLives;
+    }
+
+    //Loads a level based on the GameState
+    public static void LoadByState()
+    {
         switch (m_GameState)
         {
             case GAMESTATE.FirstLevel:
@@ -289,7 +271,6 @@ public class GameStateManager : MonoBehaviour
                 ThirdLevel();
                 break;
         }
-        m_Manager.currentLives = m_Manager.startingLives;
     }
     public static void QuitGame()
     {

@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//Emily Chavez
+
+//Josh Castillo
 public class InGameUI : MonoBehaviour
 {
     [SerializeField]
@@ -12,20 +13,6 @@ public class InGameUI : MonoBehaviour
     public void Start()
     {
         inGameUI = this;
-        // Debug.Log("InGameUI starting");
-/*          if (GameStateManager.m_Manager.resume)
-          {
-              Debug.Log("Resuming lives");
-              inGameUI.Resume(GameStateManager.m_Manager.currentLives);
-              GameStateManager.m_Manager.SetResumeBool(false);
-          }
-          else if (GameStateManager.m_Manager.newGame)
-          {
-              Debug.Log("Reseting Lives for New Game");
-              inGameUI.NewGame();
-              GameStateManager.m_Manager.SetNewGameBool(false);
-          }
-          else*/
         inGameUI.Resume(GameStateManager.m_Manager.currentLives);
     }
     public void OnLoseLife()
@@ -47,17 +34,6 @@ public class InGameUI : MonoBehaviour
         for(int i = lives.Length - 1; i > numberOfLives; i--)
         {
             lives[i].SetActive(false);
-        }
-    }
-    //resets the amount of lives in top left to show in the screen
-    public void NewGame()
-    {
-        foreach(GameObject g in lives)
-        {
-            if (!g.activeInHierarchy)
-            {
-                g.SetActive(true);
-            }
         }
     }
 }

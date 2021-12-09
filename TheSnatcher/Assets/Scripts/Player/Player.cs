@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Josh Castillo and Emily Chavez
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb2d;
@@ -77,16 +77,6 @@ public class Player : MonoBehaviour
             alreadyOpened = false;
         }
 
-        //Testing
-
-        if (Mathf.Abs(rb2d.velocity.y) > 0)
-        {
-            //Debug.Log(rb2d.velocity.y);
-        }
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            InstaLifeKill();
-        }
         if (currentHealth <= 0)
         {
             GameStateManager.m_Manager.LifeLost();

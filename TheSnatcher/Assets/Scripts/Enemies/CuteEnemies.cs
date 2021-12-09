@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Josh Castillo
 public class CuteEnemies : MonoBehaviour
 {
     //The unique scriptable object of each bear
@@ -20,8 +20,8 @@ public class CuteEnemies : MonoBehaviour
     //player transform 
     private Transform player;
 
-    //fixed value as it won't vary by the type of bear and it will not be able to be access through the inspector as it spawns it during playing time
-    private float distance = 50f;
+    //If bear's distance is greater than this, it will be destroy
+    private float distance;
     
     //boolean that allows jumping
     private bool jump;
@@ -32,13 +32,14 @@ public class CuteEnemies : MonoBehaviour
     //Assigns deault values to the scriptableObject values
     void Awake()
     {
-        //gets the player transform for the bear to go towards the player and distance check
+        //gets the player transform for the bear to go towards the player 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         speed = enemy.speed;
         maxSpeed = enemy.maxSpeed;
         jumpForce = enemy.jumpForce;
         health = enemy.health;
         damage = enemy.damage;
+        distance = enemy.unSpawnDistance;
         //assigns health to currenthealth 
         currentHealth = health;
         
@@ -95,7 +96,7 @@ public class CuteEnemies : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "P_Bullet")
+        if (collision.tag == "P_Bullet" || collision.tag == "spike")
         {
             ReduceHealth();
         }
@@ -104,10 +105,6 @@ public class CuteEnemies : MonoBehaviour
             Player.player.ApplyDamage(damage);
             //setting velocity to zero to allow the player to out run the bear that just hit him
             rb.velocity = new Vector2(0, 0);
-        }
-        if(collision.tag == "spike")
-        {
-            ReduceHealth();
         }
         if (collision.tag == "Edge")
         {

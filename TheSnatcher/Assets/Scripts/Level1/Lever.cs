@@ -4,13 +4,17 @@ using UnityEngine;
 //Emily Chavez
 public class Lever : MonoBehaviour
 {
-    public bool isOpened { get;  private set;} 
-    private SpriteRenderer spriteRenderer; 
+    public bool isOpened { get;  private set;} //made public so that the lever manager can access it
+
+    private SpriteRenderer spriteRenderer; //spriteRender component for changing the sprite after it is flipped
 
     [SerializeField]
     private GameObject player;
 
-    private  float dist;
+    //floats for controlling the distance in which the player can activate the levers
+    private float dist;
+    [SerializeField]
+    private float desiredDis;
 
     // Start is called before the first frame update
     void Start()
@@ -20,19 +24,24 @@ public class Lever : MonoBehaviour
     private void Update()
     {
         dist = Vector3.Distance(player.transform.position, transform.position);
-        //Debug.Log(dist);
-        if (dist < 2 && Input.GetKeyDown(KeyCode.E))
+
+        //testing purposes 
+        //Debug.Log(dist); 
+
+        if (dist < desiredDis && Input.GetKeyDown(KeyCode.E))
         {
             if (isOpened == false)
             {
-                isOpened = true;
-                spriteRenderer.sprite = LeverManager.leverManager.sprites[0];
+                isOpened = true; //set to true so player can interact with it anymore
+
+                spriteRenderer.sprite = LeverManager.leverManager.sprites[0]; //changes the sprite
  
-                LeverManager.leverManager.CheckLevers();
+                LeverManager.leverManager.CheckLevers(); 
             }
             
             else
             {
+                //plays sound from the AudioManager
                 AudioManager.audioManager.PlayAudio("Lever Done");
             }
         }

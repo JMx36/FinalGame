@@ -3305,6 +3305,8 @@ MonoBehaviour:
   playerOn: 1
   drop: 0
   notMove: 0
+  spike: 0
+  spikeDamage: 0
 --- !u!4 &648351186 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9137052543568440484, guid: b5f7f2cc2729169499dbd84f019e32f5, type: 3}
@@ -6276,6 +6278,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 557781078}
+    - target: {fileID: 3017588933315195075, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
+      propertyPath: desiredDis
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3084855193400771193, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
       propertyPath: portalOn
       value: 
@@ -6327,6 +6333,10 @@ PrefabInstance:
     - target: {fileID: 4370421116580484427, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
       propertyPath: testing
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370421116580484427, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
+      propertyPath: desiredDis
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4674511246536896016, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
       propertyPath: m_Name
@@ -6416,6 +6426,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 557781078}
+    - target: {fileID: 7009342470074244090, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
+      propertyPath: desiredDis
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8515043314200973150, guid: 93d70dfc9b8b8f34c8dcc8e7fc6b4d4a, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.375725
@@ -6642,6 +6656,8 @@ MonoBehaviour:
   playerOn: 1
   drop: 0
   notMove: 0
+  spike: 0
+  spikeDamage: 0
 --- !u!1 &1503130444
 GameObject:
   m_ObjectHideFlags: 0
@@ -8458,6 +8474,8 @@ MonoBehaviour:
   playerOn: 1
   drop: 0
   notMove: 0
+  spike: 0
+  spikeDamage: 0
 --- !u!4 &1808570037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4057799692864464942, guid: eef431862a5806d4da1ed3fec0e66181, type: 3}
@@ -9153,6 +9171,8 @@ MonoBehaviour:
   playerOn: 1
   drop: 0
   notMove: 0
+  spike: 0
+  spikeDamage: 0
 --- !u!1001 &1924564915
 PrefabInstance:
   m_ObjectHideFlags: 0

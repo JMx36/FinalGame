@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
+//Josh Castillo
 [System.Serializable]
 public class Sounds
 {

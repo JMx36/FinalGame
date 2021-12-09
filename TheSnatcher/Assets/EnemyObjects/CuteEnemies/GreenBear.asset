@@ -19,3 +19,4 @@ MonoBehaviour:
   health: 70
   damage: 30
   maxSpeed: 60
+  unSpawnDistance: 50

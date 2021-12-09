@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+//Josh Castillo
 
 public class ObjectMover : MonoBehaviour
 {
@@ -8,13 +8,13 @@ public class ObjectMover : MonoBehaviour
     [SerializeField] private float duration;
     [SerializeField] private float moveUnits;
 
-    //bools for determining the action of the gameObject
+    //bools for determining the movement of the gameObject
     [SerializeField] private bool moveSideWays;
     [SerializeField] private bool playerOn;
     [SerializeField] private bool drop;
     [SerializeField] private bool notMove;
 
-    
+    //spike variables for recognizing the object as a spike and have a damage output
     [SerializeField] private bool spike;  
     [SerializeField] private int spikeDamage;
 
@@ -27,6 +27,7 @@ public class ObjectMover : MonoBehaviour
     
     //universal time variable to prevent jerky movement with MovePlatform()
     private float time;
+
     public void Start()
     {
         //gets the rigid body of the gameobject if it has any
@@ -51,43 +52,8 @@ public class ObjectMover : MonoBehaviour
         //Do you want the player to stand on the platform before moving or do you want the platform to move?
         //if not, then platform will move from the beginning  
         if (!playerOn && !notMove) 
-            PlatformTrigger();
-        
-    }
-
-    //this method is called when the platform comes in contact with the player
-    private void PlatformTrigger()
-    {       
-        StartCoroutine(MovePlatform());
-    }
-
-    //This method moves the Platform back and forth based on the target and start position of the object 
-    private IEnumerator MovePlatform()
-    {
-        time = 0;
-        while (time < duration)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPos, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-        targetPos = startPosition;
-        startPosition = transform.position;
-        StartCoroutine(MovePlatform()); 
-    }
-   
-    //This method moves the object back to its original spot (only meant for y axis movement) 
-    private IEnumerator MoveBack()
-    {       
-        time = 0;
-        while (time < duration)
-        {
-            transform.position = Vector3.Lerp(transform.position, startPosition, time / duration);
-            time += Time.deltaTime;
-            yield return null;
-        }
-    }
-  
+            PlatformTrigger();       
+    }  
     //Method for detecting if player has entered the trigger collider of the gameobject and act accordingly 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -117,15 +83,48 @@ public class ObjectMover : MonoBehaviour
             rb.isKinematic = true;
             StartCoroutine(MoveBack());
         }
-       /* else if(collision.gameObject.tag == "Player" && spike)
-        {
-            
-        }*/
     }
     //Method call to drop the gameobject by changing its kinematic value
     private void DropObject()
     {
         StopAllCoroutines(); //stops the Coroutine MoveBack to not get Jerky movement
         rb.isKinematic = false;
+    }
+
+    //this method is called when the platform comes in contact with the player
+    private void PlatformTrigger()
+    {
+        StartCoroutine(MovePlatform());
+    }
+
+    /// <summary>
+    ///  Coroutines for object movements 
+    /// </summary>
+
+    //This method moves the Platform back and forth based on the target and start position of the object 
+    private IEnumerator MovePlatform()
+    {
+        time = 0;
+        while (time < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPos, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        targetPos = startPosition;
+        startPosition = transform.position;
+        StartCoroutine(MovePlatform());
+    }
+
+    //This method moves the object back to its original spot (only meant for y axis movement) 
+    private IEnumerator MoveBack()
+    {
+        time = 0;
+        while (time < duration)
+        {
+            transform.position = Vector3.Lerp(transform.position, startPosition, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
     }
 }

@@ -39,21 +39,26 @@ public class Crab : MonoBehaviour
     
     
     public void Update()
-    { // To stop the crab from shooting randomly 
+    {
+        // To stop the crab from spamming bullet every frame 
         distance = Vector2.Distance(transform.position, player.position);
       
         if (timeToShoot < 0 && distance < noticed)
         {
-            Instantiate(enemyBullet, transform.position, transform.rotation);
+            //Spawns a bullet and assings it to this Gameobject 
             GameObject enemyB = Instantiate(enemyBullet, transform.position, transform.rotation);
+            
+            //The EnemyBullet script componet is stored in bullet and then the damage is set
             EnemyBullet bullet = enemyB.GetComponent<EnemyBullet>();
             bullet.SetDamage(damage);
             timeToShoot = coolDown;
         }
         else
         {
+            //reduces timeToShoot by TIme.dealTime each frame
             timeToShoot -= Time.deltaTime;
         }
+
         if (currentHealth <= 0)
             Destroy(gameObject);
     }
