@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+
+//Emily Chavez
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
@@ -59,7 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        //chekcs if there are still sentences to show 
+        //checks if there are still sentences to show 
         if (sentences.Count == 0)
         {
             EndDialogue();

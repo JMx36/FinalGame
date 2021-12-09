@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//coded by Emily Elizabeth Chavez
+//Emily Chavez
 public class EnemyDetection : MonoBehaviour
 {
     private GameObject enemy;
@@ -79,7 +79,7 @@ public class EnemyDetection : MonoBehaviour
 
         }
     }
-    private void MoveEnemy(int direction) 
+    private void MoveEnemy(int direction) // actual movement of enemy
     {
         rb.MovePosition(rb.position +  new Vector2(direction, 0) * enemyMovement * Time.fixedDeltaTime);
     }

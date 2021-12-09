@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Emily Chavez 
 public class PortalScript : MonoBehaviour
 {
-   // Start is called before the first frame update
-
+    //to load player into the next levels when going through the portals
     public void OnTriggerEnter2D(Collider2D collision)
     {
         //  Debug.Log("Teleporting Player"); 

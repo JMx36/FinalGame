@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//Emily Chavez
 public class InGameUI : MonoBehaviour
 {
     [SerializeField]
@@ -49,7 +49,7 @@ public class InGameUI : MonoBehaviour
             lives[i].SetActive(false);
         }
     }
-    //resets the amount of lives to show in the screen
+    //resets the amount of lives in top left to show in the screen
     public void NewGame()
     {
         foreach(GameObject g in lives)

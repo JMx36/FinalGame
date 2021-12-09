@@ -15,6 +15,7 @@ public class Octopus : MonoBehaviour
     private string enemyName;
     private int health;
     private int currentHealth; 
+
     private void Awake()
     {
         damage = monster.damage;
@@ -22,6 +23,7 @@ public class Octopus : MonoBehaviour
         enemyName = monster.Name;
         currentHealth = health;
     }
+    //damge to octopus after getting hit by player's bullet
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "P_Bullet")
@@ -35,6 +37,7 @@ public class Octopus : MonoBehaviour
         }
 
     }
+    //when octopus is killed
     public void Update()
     {
         if (currentHealth <= 0)
