@@ -137,19 +137,25 @@ public class GameStateManager : MonoBehaviour
     public static void FirstLevel()
     {
         m_GameState = GAMESTATE.FirstLevel;
-        SceneLoaderManager.m_SceneManager.FirstLevel(); 
+        SceneLoaderManager.m_SceneManager.FirstLevel();
+        PlayerPrefs.SetInt("State", (int)m_GameState);
+        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
     }         
 
     public static void SecondLevel()
     {
         m_GameState = GAMESTATE.SecondLevel;
         SceneLoaderManager.m_SceneManager.SecondLevel();
+        PlayerPrefs.SetInt("State", (int)m_GameState);
+        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
     }
 
     public static void ThirdLevel()
     {
-        m_GameState = GAMESTATE.SecondLevel;
+        m_GameState = GAMESTATE.ThirdLevel;
         SceneLoaderManager.m_SceneManager.ThirdLevel();
+        PlayerPrefs.SetInt("State", (int)m_GameState);
+        PlayerPrefs.SetInt("Lives", m_Manager.currentLives);
     }
 
     public static void PlayerWins()

@@ -15,6 +15,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI nameText;
 
+    private bool passed;
+
     public void Awake()
     {
         sentences = new Queue<string>();
@@ -82,13 +84,14 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.Log("Loading first level from Dialogue Manager");
             GameStateManager.FirstLevel();
+            passed = true;
         }
         else if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.EndDialogue)
         {
             Debug.Log("Loading thrid level from Dialogue Manager");
             GameStateManager.PlayerWins();
         }
-        else
+        else if(!passed)
         {
             gameObject.SetActive(false);
             Player.player.AllowMovement(true);

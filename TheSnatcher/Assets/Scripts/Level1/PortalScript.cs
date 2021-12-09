@@ -15,12 +15,9 @@ public class PortalScript : MonoBehaviour
             {
                 GameStateManager.ThirdLevel();
             }
-            else if (LeverManager.leverManager.leversComplete)
+            else if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel && LeverManager.leverManager.leversComplete)
             {                
-                if (GameStateManager.m_GameState == GameStateManager.GAMESTATE.FirstLevel)
-                {
-                    GameStateManager.SecondLevel();
-                }                         
+                    GameStateManager.SecondLevel();                     
             }
             else
                 Debug.Log("Level non existent. Current GameState level is " + GameStateManager.m_GameState.ToString());
