@@ -6,18 +6,35 @@ using UnityEngine;
 public class RedSuitGuy : MonoBehaviour
 {
     [SerializeField]
-    private Animator deathAni; 
-    
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "P_Bullet") 
-        {
-            deathAni.SetBool("IfKilled", true);
-        }
+    private Animator deathAni;
+    [SerializeField]
+    private float distance;
+   
+    private Transform player;
 
-        GameStateManager.DialogueScene(); //triggers ending dialogue scene to play right after bullet and death animation play 
+    private bool close;
+
+    public void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    private void Update()
+    {
+        if (Vector2.Distance(player.position, transform.position) < distance)
+        {
+            close = true;
+        }
+        else
+            close = false;
+    }
 
-
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "P_Bullet" && close) 
+        {
+            deathAni.SetBool("IfKilled", true);
+            GameStateManager.DialogueScene(); //triggers ending dialogue scene to play right after bullet and death animation play 
+        }         
+    }
 }
