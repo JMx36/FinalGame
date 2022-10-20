@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-//Josh Castillo
+//Emily Chavez
 
 public class LeverManager : MonoBehaviour
 {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-//Josh Castillo
+//Emily Chavez
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> sentences;
